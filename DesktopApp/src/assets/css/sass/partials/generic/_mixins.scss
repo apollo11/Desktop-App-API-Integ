@@ -1,0 +1,195 @@
+// =========================
+// MIXINS
+// =========================
+// - REM
+// - MEDIA QUERY
+// - TRIANGLE
+// - Ghost Vertical Align
+// - TRUNCATE Text
+// - PLACEHOLDER
+
+
+// REM: Set a rem font size with pixel fallback
+    @function calculateRem($size) {
+        $remSize: $size / 16px;
+        @return $remSize * 1rem;
+    }
+
+    @mixin font-size($size) {
+        font-size: $size;
+        font-size: calculateRem($size);
+    }
+
+// MEDIA QUERY
+    $breakpoints: (
+        phone:         400px,
+        phone-wide:    480px,
+        phablet:       560px,
+        tablet-small:  640px,
+        tablet:        768px,
+        tablet-wide:   1024px,
+        desktop-small: 980px,
+        desktop:       1248px,
+        desktop-wide:  1550px,
+        
+        fullscreen:    1025px,
+        minscreen:      900px        
+    );
+    @mixin mq($width, $type: min) {
+        @if map_has_key($breakpoints, $width) {
+            $width: map_get($breakpoints, $width);
+            @if $type == max {
+                $width: $width - 1px;
+            }
+            @media only screen and (#{$type}-width: $width) {
+                @content;
+            }
+        }
+    }
+
+// TRIANGLE
+// * @include triangle within a pseudo element and add positioning properties (ie. top, left)
+// * $direction: up, down, left, right
+    @mixin triangle($direction, $size: 6px, $color: #222){
+        content: '';
+        display: block;
+        position: absolute;
+        height: 0; width: 0;
+        @if ($direction == 'up'){
+            border-bottom: $size solid $color;
+            border-left: 1/2*$size solid transparent;
+            border-right: 1/2*$size solid transparent;
+        }
+        @else if ($direction == 'down'){
+            border-top: $size solid $color;
+            border-left: 1/2*$size solid transparent;
+            border-right: 1/2*$size solid transparent;
+        }
+        @else if ($direction == 'left'){
+            border-top: 1/2*$size solid transparent;
+            border-bottom: 1/2*$size solid transparent;
+            border-right: $size solid $color;
+        }
+        @else if ($direction == 'right'){
+            border-top: 1/2*$size solid transparent;
+            border-bottom: 1/2*$size solid transparent;
+            border-left: $size solid $color;
+        }
+    }
+
+// Ghost Vertical Align
+    @mixin ghostVerticalAlign(){
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%; width: .1px;
+    }
+    }
+
+// Truncate Text
+    @mixin truncateText($overflow: ellipsis){
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: $overflow; // values are: clip, ellipsis, or a string
+    }
+
+// Placeholders
+    @mixin input-placeholder {
+        &.placeholder { @content; }
+        &:-moz-placeholder { @content; }
+        &::-moz-placeholder { @content; }
+        &:-ms-input-placeholder { @content; }
+        &::-webkit-input-placeholder { @content; }
+    }
+
+// Opacity
+    @mixin opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+    }
+
+
+// =========================
+// PLACEHOLDERS (@extend)
+// =========================
+
+// Clearfix
+%clearfix {
+  // *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Visually hide an element
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Mobile Menu
+// @mixin mobileMenu() {
+//     float: none;
+//     width: 70%;
+//     height: auto;
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     left: -100%;
+//     margin: 0;
+//     background: $blue;
+//     box-shadow: inset -9px 0px 8px -2px darken($blue, 5%);
+//     -webkit-overflow-scrolling: touch;
+//     overflow: scroll;
+//     z-index: -1;
+//     transition: left .2s ease-in-out;
+//     &.is-mobile-menu-open {
+//       display: block;
+//       left: 0;
+//     }
+//     > ul {
+//       margin: 0;
+//       border: none;
+//       > li {
+//         position: relative;
+//         overflow: hidden;
+//         float: none;
+//         display: block;
+//         margin: 0;
+//         border-bottom: 1px solid $lightblue;
+//         a {
+//           position: relative;
+//           display: block;
+//           padding: 1em 60px 1em 20px;
+//           font-size: 13px;
+//           line-height: 20px;
+//           color: white;
+//           overflow: hidden;
+//           z-index: 1;
+//         }
+//       }
+//       ul {
+//         display: none;
+//         position: relative;
+//         margin: 0;
+//         padding: 0;
+//         list-style: none;
+//         > li > a {
+//           padding-left: 20px;
+//           color: $blue;
+//         }
+//       }      
+//     }
+// }

@@ -1,0 +1,197 @@
+
+<nav id="mainNav" class="c-nav" [ngClass]="!showNavOptns ? 'is-toggled-close' : 'is-toggled-open'">
+
+    <ul class="c-nav__list c-nav__list--main">
+        <li class="c-nav__item" routerLinkActive="is-current">
+            <a [routerLink]="['/home']" title="{{ 'MENU.HOME' | translate }}">
+                <i class="icon icon-home"></i>
+                <span>{{ 'MENU.HOME' | translate }}</span>
+            </a>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a [routerLink]="['/casino']" title="{{ 'MENU.CASINO' | translate }}">
+                <i class="icon icon-casino"></i>
+                <span>{{ 'MENU.CASINO' | translate }}</span>
+            </a>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a title="{{ 'MENU.GAMES' | translate }}" (click)="navSubLink()">
+                <i class="icon icon-games"></i>
+                <span>{{ 'MENU.GAMES' | translate }}</span>
+            </a>
+            <div class="menu-sub-toggler js-menuSubToggler">
+                <i class="icon icon-angle-down"></i>
+            </div>
+            <ul class="c-nav__list c-nav__list--sub">
+                <li>
+                    <a [routerLink]="['/games/Featured Games']" (click)="navLink()">
+                        <i class="icon icon-gamesmini"></i>
+                        <span>{{ 'MENU.FeaturedGames' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/games/jackpot']" (click)="navLink()">
+                        <i class="icon icon-gamesmini"></i>
+                        <span>{{ 'MENU.Jackpot' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/games/slots']" (click)="navLink()">
+                        <i class="icon icon-gamesmini"></i>
+                        <span>{{ 'MENU.Slots' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/games/Table Games']" (click)="navLink()">
+                        <i class="icon icon-gamesmini"></i>
+                        <span>{{ 'MENU.TableGames' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/games/Video Poker']" (click)="navLink()">
+                        <i class="icon icon-gamesmini"></i>
+                        <span>{{ 'MENU.VideoPoker' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a [routerLink]="['/sports']" title="{{ 'MENU.SportsBook' | translate }}">
+                <i class="icon icon-soccer-ball"></i>
+                <span>{{ 'MENU.SportsBook' | translate }}</span>
+            </a>
+        </li>
+        <li>
+            <div class="o-divider o-divider--horizontal"></div>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a [routerLink]="['/promotion']" title="{{ 'MENU.Promotions' | translate }}">
+                <i class="icon icon-gift"></i>
+                <span>{{ 'MENU.Promotions' | translate }}</span>
+            </a>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a href="http://aff.orange88.com/{{lang}}" target="_blank" title="{{ 'MENU.Affiliate' | translate }}">
+                <i class="icon icon-promotions"></i>
+                <span>{{ 'MENU.Affiliate' | translate }}</span>
+            </a>
+        </li>
+        <li>
+            <div class="o-divider o-divider--horizontal"></div>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <!--<a [routerLink]="['/', { outlets: { 'aux': 'bank' } }]" title="Bank Accounts">-->
+            <a href="javascript:void();" title="{{ 'MENU.BankAccounts' | translate }}" (click)="navSubLink()">
+                <i class="icon icon-bank"></i>
+                <span>{{ 'MENU.BankAccounts' | translate }}</span>
+            </a>
+            <div class="menu-sub-toggler js-menuSubToggler">
+                <i class="icon icon-angle-down"></i>
+            </div>
+            <ul class="c-nav__list c-nav__list--sub">
+                <li>
+                    <a [routerLink]="['/bank']" (click)="navLink()">
+                        <i class="icon icon-book"></i>
+                        <span>{{ 'MENU.BankAccountsList' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/bank-add']" (click)="navLink()">
+                        <i class="icon icon-bank"></i>
+                        <span>{{ 'MENU.AddBankAccounts' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/transaction']" (click)="navLink()">
+                        <i class="icon icon-clock"></i>
+                        <span>{{ 'MENU.TransactionHistory' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a href="javascript:void();" title="{{ 'MENU.Deposit' | translate }}" (click)="navSubLink()">
+                <i class="icon icon-deposit"></i>
+                <span>{{ 'MENU.Deposit' | translate }}</span>
+            </a>
+            <div class="menu-sub-toggler js-menuSubToggler">
+                <i class="icon icon-angle-down"></i>
+            </div>
+            <ul class="c-nav__list c-nav__list--sub">
+                <li>
+                    <a [routerLink]="['/online-deposit']" (click)="navLink()">
+                        <i class="icon icon-globe"></i>
+                        <span>{{ 'MENU.OnlineDeposit' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/quick-deposit']" (click)="navLink()">
+                        <i class="icon icon-angle-double-right"></i>
+                        <span>{{ 'MENU.QuickDeposit' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/wechat']" (click)="navLink()">
+                        <i class="icon icon-wechat"></i>
+                        <span>{{ 'MENU.WeChatDeposit' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/deposit-history']" (click)="navLink()">
+                        <i class="icon icon-clock"></i>
+                        <span>{{ 'MENU.DepositHistory' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a href="javascript:void();" title="{{ 'MENU.Withdrawal' | translate }}" (click)="navSubLink()">
+                <i class="icon icon-withdrawal"></i>
+                <span>{{ 'MENU.Withdrawal' | translate }}</span>
+            </a>
+            <div class="menu-sub-toggler js-menuSubToggler">
+                <i class="icon icon-angle-down"></i>
+            </div>
+            <ul class="c-nav__list c-nav__list--sub">
+                <li>
+                    <a [routerLink]="['/withdrawal']" (click)="navLink()">
+                        <i class="icon icon-upload"></i>
+                        <span>{{ 'MENU.CreateWithdrawal' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/withdrawal-transaction']" (click)="navLink()">
+                        <i class="icon icon-clock"></i>
+                        <span>{{ 'MENU.WithdrawalHistory' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="o-divider o-divider--horizontal"></div>
+        </li>
+        <li class="c-nav__item " routerLinkActive="is-current">
+            <a href="javascript:void();" title="{{ 'MENU.Settings' | translate }}" (click)="navSubLink()">
+                <i class="icon icon-cog"></i>
+                <span>{{ 'MENU.Settings' | translate }}</span>
+            </a>
+            <div class="menu-sub-toggler js-menuSubToggler">
+                <i class="icon icon-angle-down"></i>
+            </div>
+            <ul class="c-nav__list c-nav__list--sub">
+                <li>
+                    <a [routerLink]="['/profile']" (click)="navLink()">
+                        <i class="icon icon-user"></i>
+                        <span>{{ 'MENU.EditProfile' | translate }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/change-password']">
+                        <i class="icon icon-lock"></i>
+                        <span>{{ 'MENU.ChangePassword' | translate }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

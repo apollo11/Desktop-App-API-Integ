@@ -1,0 +1,28 @@
+
+<div id="{{modalId}}" class="c-modal">
+    <div class="c-modal__wrapper">
+
+      <div class="c-modal__body">
+          <div class="c-modal__title align-center">
+              <h3 class="uppercase">{{ 'SUCCESS.Success' | translate }}</h3>
+              <div [ngSwitch]="successType">
+                <p *ngSwitchCase="'register'">{{ 'SUCCESS.SuccessfullyCreated' | translate }}</p>
+                <p *ngSwitchCase="'changePassword'">{{ 'SUCCESS.ModifiedPassword' | translate }}</p>
+              </div>
+          </div>
+      </div>
+      <div class="c-modal__footer">
+
+        <div [ngSwitch]="successType">
+          <button *ngSwitchCase="'register'" type="button" (click)="onOk()" class="c-form__submit o-button o-button--success">
+              {{ 'SUCCESS.PlayNow' | translate }}
+          </button>
+          <button *ngSwitchCase="'changePassword'" type="button" (click)="onOkChwd()" class="c-form__submit o-button o-button--success">
+              {{ 'SUCCESS.LoginNow' | translate }}
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+</div>

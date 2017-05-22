@@ -1,0 +1,52 @@
+// DRUPAL ALERT
+
+.c-alert {
+    // padding: 1em 2em;
+    // background: $gray;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    z-index: 99;
+    &--inline {
+        padding: 10px;
+        border: 1px solid #ff7e7e;
+        @include font-size(12px);
+        text-align: left;
+        background: $gray-dark;
+        color: #ff7e7e;
+    }
+}
+.c-alert__wrapper {
+    background: $black;
+    padding: 2rem 6rem;
+}
+
+.c-alert__title {
+    margin: 0;
+    font-family: $highlight-font-bold;
+    @include font-size(28px);
+    font-weight: normal;
+    color: #ff7e7e;
+    text-transform: uppercase;
+}
+.c-alert__desc {
+    @include font-size(14px);
+    color: $gray-med;
+}
+
+// DIALOG : WARNING
+.c-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,.5);
+    text-align: center;
+    color: #111;
+    background: #ffdead;
+    z-index: 1000;
+}

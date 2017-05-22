@@ -1,0 +1,110 @@
+
+<div id="{{modalId}}" class="c-modal">
+    <div class="c-modal__wrapper">
+        <button type="button" class="c-modal__close" aria-label="Close" (click)="onCancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <form autocomplete="off" novalidate name="registration" #RegistrationForm="ngForm" class="c-form">
+            <div class="c-modal__body">
+                <div class="c-modal__title align-center">
+                    <h3>{{ 'SIGNUP.Header' | translate }}</h3>
+                    <p>{{ 'SIGNUP.Info' | translate }}</p>
+                </div>
+
+                <div *ngIf="success" class="c-alert c-alert--inline hidden" style="display: block">
+                    <div *ngFor="let error of dataError">
+                        <i class="icon icon-info-circled"></i> {{ error.Description }}
+                    </div>
+                </div>
+
+                <div class="c-form__group">
+                    <label class="c-form__label invisible" for="regUsername">{{ 'SIGNUP.Username' | translate }}</label>
+                    <input type="text" class="c-form__input" id="regUsername"
+                        required
+                        [(ngModel)]="registration.UserName" name="regUsername"
+                        placeholder="{{ 'SIGNUP.Username' | translate }}" #regUsername="ngModel"
+                        minlength="5" maxlength="30">
+
+                    <div [hidden]="regUsername.valid" *ngIf="submitted"
+                         class="alert alert-danger">
+                        {{ 'SIGNUP.ErrorUsername' | translate }}
+                    </div>
+
+                </div>
+                <div class="c-form__group">
+                    <label class="c-form__label invisible" for="regPassword">{{ 'SIGNUP.Password' | translate }}</label>
+                    <input type="password" class="c-form__input" id="regPassword"
+                           required
+                           [(ngModel)]="registration.Password"
+                           [(ngModel)]="registration.ConfirmPassword" name="regPassword"
+                           #regPassword="ngModel"
+                           name="regPassword" placeholder="{{ 'SIGNUP.Password' | translate }}"
+                           minlength="6" maxlength="30">
+
+                    <div [hidden]="regPassword.valid" *ngIf="submitted"
+                         class="alert alert-danger">
+                        {{ 'SIGNUP.ErrorPassword' | translate }}
+                    </div>
+                </div>
+
+                <div class="c-form__group">
+                    <label class="c-form__label invisible" for="regEmail">
+                        <span>{{ 'SIGNUP.Email' | translate }}</span>
+                    </label>
+                    <input type="text" class="c-form__input"
+                           [(ngModel)]="registration.EmailAddress" name="regEmail" id="regEmail"
+                           placeholder="{{ 'SIGNUP.Email' | translate }}"
+                           #regEmail="ngModel" email/>
+
+                    <div [hidden]="regEmail.valid" *ngIf="regEmail.errors?.email || submitted"
+                         class="alert alert-danger">
+                        {{ 'SIGNUP.ErrorEmail' | translate }}
+                    </div>
+                </div>
+
+                <div role="separator" class="c-form__group c-form__divider">
+                    <span>{{ 'SIGNUP.Or' | translate }}</span>
+                </div>
+
+                <div class="c-form__group">
+                    <label class="c-form__label invisible" for="mobile-country-code-number">
+                        <span>{{ 'SIGNUP.MobileNumber' | translate }}</span>
+                    </label>
+                    <div class="c-form__input-group">
+                        <div class="c-form__input-group-add">
+                            <div class="c-form__select__wrapper">
+                                <select class="c-form__input c-form__select" id="mobile-country-code-number"
+                                        [(ngModel)]="registration.MobileCountryCodeNumber" name="mobileCode" #mobileCode="ngModel">
+                                    <option disabled value="0">{{ 'SIGNUP.CountryCode' | translate }}</option>
+                                    <option *ngFor="let country of countries"
+                                            [ngValue]="country.CountryCallCode" selected>
+                                        {{ country.CountryCallCode }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="text" class="c-form__input" id="regMobileNumber"
+                            [(ngModel)]="registration.MobileNumber" name="regMobileNumber"
+                            placeholder="{{ 'SIGNUP.MobileNumber' | translate }}" #regMobileNumber="ngModel"
+                            minlength="10" maxlength="10"
+                            onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+                    </div>
+                    <div [hidden]="regMobileNumber.valid"  *ngIf="submitted" class="alert alert-danger">
+                        {{ 'SIGNUP.ErrorMobile' | translate }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-modal__footer">
+                <button (click)="onSubmit()" type="submit" class="c-form__submit o-button o-button--action" >
+                    <span *ngIf="!submitting">{{ 'SIGNUP.Submit' | translate }}</span>
+                    <span *ngIf="submitting" class="spinner-bar"></span>
+                </button>
+                <p>
+                    <a (click)="onCancel()" class="tiny">{{ 'SIGNUP.SignIn' | translate }}</a>
+                </p>
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,463 @@
+{
+  "HOME": {
+    "TITLE": "Hello Angular with ngx-translate!",
+    "SELECT": "Change language"
+  },
+
+  "LOGIN": {
+    "Username": "Username",
+    "Password": "Password",
+    "RememberUsername": "Remember Username?",
+    "ForgotPassword": "Forgot Password?",
+    "Submit": "Submit",
+    "ErrorUsername": "Username is required",
+    "ErrorPassword": "Password is required",
+    "NewUser": "New User?",
+    "SignUp": "Sign Up!"
+  },
+
+  "SIGNUP": {
+    "Header": "Sign Up",
+    "Info": "Fast and easy. Create a new account now.",
+    "Username": "Username",
+    "Password": "Password",
+    "Email": "Email Address",
+    "Or": "OR",
+    "Submit": "Submit",
+    "ErrorUsername": "Username must be at least 5 characters long and max 30",
+    "ErrorPassword": "Password must be at least 6 characters long and max 30",
+    "ErrorEmail": "Email Address is required",
+    "ErrorMobile": "Mobile is required",
+    "SignIn": "Already have an account? Sign In",
+    "CountryCode": "Select your Country Code",
+    "MobileNumber": "Mobile Number"
+  },
+
+  "FORGOTPASSWORD": {
+    "Header": "Need help with your password?",
+    "Info": "Pleas provide one registered contact detail and we'll send you instructions to get you back on the game.",
+    "Username": "Username",
+    "Email": "Email Address",
+    "Or": "OR",
+    "CountryCode": "Select your Country Code",
+    "MobileNumber": "Mobile Number",
+    "ErrorUsername": "Username is required",
+    "ErrorEmail": "Email Address is required",
+    "ErrorMobile": "Mobile is required",
+    "Submit": "Submit"
+  },
+
+  "LANDINGPAGE": {
+    "FeaturedSlotGames": "Featured Slot Games",
+    "LiveCasino": "Live Casino",
+    "SportsBook": "Sports Book",
+    "StayInTheGame": "Stay In the game until the last second!",
+    "BetNow": "Bet Now",
+    "Header1": "¥10,000! Our Best First Deposit Bonus Offer Yet!",
+    "DepositNow": "Deposit Now",
+    "PlayNow": "Play Now",
+    "More": "More",
+    "MoreGames": "More Games"
+  },
+
+  "BANNER": {
+    "PlayNow": "Play Now"
+  },
+
+  "HEADER": {
+    "Home": "Home",
+    "Logout": "Logout",
+    "More": "More"
+  },
+
+  "FOOTER": {
+    "AboutOrange88": "About Orange88",
+    "Privacy": "Privacy",
+    "Terms": "Terms",
+    "Help": "Faq",
+    "Copyright": "Copyright © 2017 Orange88. All rights reserved."
+  },
+
+  "MENU": {
+    "HOME": "HOME",
+    "CASINO": "CASINO",
+    "GAMES": "GAMES",
+    "FeaturedGames": "Featured Games",
+    "Jackpot": "Jackpot",
+    "Slots": "Slots",
+    "TableGames": "Table Games",
+    "VideoPoker": "Video Poker",
+    "SportsBook": "SPORTS BOOK",
+    "Promotions": "PROMOTIONS",
+    "Affiliate": "AFFILIATE",
+    "BankAccounts": "BANK ACCOUNTS",
+    "BankAccountsList": "My Bank Accounts",
+    "AddBankAccounts": "Add Bank Accounts",
+    "Deposit": "DEPOSIT",
+    "OnlineDeposit": "Online Deposit",
+    "QuickDeposit": "Quick Deposit",
+    "WeChatDeposit": "WeChat Deposit",
+    "DepositHistory": "Deposit History",
+    "Withdrawal": "WITHDRAW",
+    "CreateWithdrawal": "Withdrawal",
+    "WithdrawalHistory": "Withdrawal History",
+    "Settings": "SETTINGS",
+    "EditProfile": "Profile",
+    "SecuritySettings": "Security Settings",
+    "ChangePassword": "Change Password",
+    "TransactionHistory": "Transaction History"
+  },
+
+  "CASINO": {
+    "Casino": "Casino",
+    "PlayNow": "Play Now"
+  },
+
+  "PROMOTIONS": {
+    "Promotions": "Promotions",
+    "MoreInformation": "More Information",
+    "Header1": "¥10,000! Our Best First Deposit Bonus Offer Yet!",
+    "DepositNow": "Deposit Now",
+    "Search": "Search"
+  },
+
+  "SPORTSBOOK": {
+    "Sports": "Sports",
+    "BetNow": "Bet Now"
+  },
+
+  "FILTERATION": {
+    "All": "ALL",
+    "GD": "GD",
+    "TGP": "TGP",
+    "HG": "HG",
+    "PT": "PT",
+    "AG": "AG",
+    "BETSOFT": "BETSOFT",
+    "MG": "MG",
+    "TTG": "TTG",
+    "TITLE": "TITLE",
+    "Search": "Search",
+    "Games": "Games",
+    "PlayNow": "PLAY NOW"
+  },
+
+  "BANKACCOUNTS": {
+    "BankAccounts": "MY BANK ACCOUNTS",
+    "AddAsMyWithdrawal": "Add as many withdrawal accounts as you want, but please be advised that this is subject for approval.",
+    "AccountName": "Account Name",
+    "AccountNo": "Account No",
+    "BankName": "Bank Name",
+    "Status": "Status",
+    "Edit": "Edit",
+    "AddBankAccount": "Add Bank Account",
+    "AddNewBankAccountDetails": "Add new bank account details.",
+    "AccountNumber": "Account Number",
+    "PreferredBanks": "Preferred Banks",
+    "ChooseYourBank": "Choose your Bank",
+    "BranchName": "Branch Name",
+    "City": "City",
+    "Province": "Province",
+    "Cancel": "Cancel",
+    "Add": "Add",
+    "Success": "Success",
+    "ErrorAccountNumber": "Account Number is required",
+    "ErrorPreferredBanks": "Preferred Banks is required",
+    "ErrorBranchName": "Branch Name is required",
+    "ErrorCity": "City is required",
+    "ErrorProvince": "Province is required"
+  },
+
+  "ONLINEDEPOSIT": {
+    "OnlineDeposit": "ONLINE DEPOSIT",
+    "OnlineDepositBank": "Online Deposit Bank",
+    "OnlineDepositIsAnOnline": "Online deposit is an online method that provides you with an instant deposit transaction. It is a safe way to deposit online without disclosing your bank details information",
+    "MinimumAndMaximumDeposit": "Minimum and maximum deposit: 10 yuan - 50,000 yuan per transaction.",
+    "ChooseYourOnlineDepositBank": "Choose your Online Deposit Bank",
+    "Bonus": "Bonus Code",
+    "Deposit": "Deposit",
+    "ConfirmDepositAmount": "Confirm Deposit Amount",
+    "DepositAmount": "Deposit Amount",
+    "Proceed": "Proceed",
+    "Cancel": "Cancel",
+    "ErrorOnlineDepositBank": "Online Deposit Bank is required",
+    "ErrorOnlineDepositAmount": "Deposit Amount is required"
+  },
+
+  "QUICKDEPOSIT": {
+    "QuickDeposit": "QUICK DEPOSIT",
+    "QuickDepositMethod": "Quick Deposit Method",
+    "QuickDepositPreferredBanks": "Quick Deposit Preferred Banks",
+    "Step1": "STEP 1" ,
+    "ChooseYourQuickDepositMethod": "Choose your Quick Deposit Method",
+    "ChooseYourBank": "Choose your Bank",
+    "Step2": "STEP 2" ,
+    "PlayerDepositAmount": "Player's Deposit Amount",
+    "BankName": "Bank Name",
+    "AccountName": "Account Name",
+    "AccountNumber": "Account Number",
+    "BonusCode": "Bonus Code",
+    "Step3": "STEP 3",
+    "UniqueDepositAmount": "Unique Deposit Amount",
+    "PleaseDepositThisAmount": "Please Deposit this Amount",
+    "Deposit": "Deposit",
+    "Success": "Success",
+    "MinimumAndMaximumDeposit": "Minimum and maximum deposit: 10 yuan - 200,000 yuan per transaction.",
+    "Successfully":"Successfully Deposit.",
+    "PleaseUseDeposit":"Please use this amount when making a deposit. This will help us to easily identify your deposit."
+  },
+
+  "WECHATDEPOSIT": {
+    "WechatDeposit": "WECHAT DEPOSIT",
+    "MinimumAndMaximumDeposit": "Minimum and maximum deposit: 10 yuan - 3,000 yuan per transaction.",
+    "DepositAmount": "Deposit Amount",
+    "BonusCode": "Bonus Code",
+    "Deposit": "Deposit",
+    "ConfirmDepositAmount": "Confirm Deposit Amount",
+    "Proceed": "Proceed",
+    "Cancel": "Cancel",
+    "BankIsNotAvailable": "BANK IS NOT AVAILABLE",
+    "ErrorDepositAmount": "Minimum 10 yuan, up to 3,000 yuan"
+},
+
+  "DEPOSITTRANSACTION": {
+    "DepositTransaction": "DEPOSIT TRANSACTION",
+    "WeWillProcess": "We will process this request as soon as possible. In the event that this request has taken too long, please fo not hesitate to contact your personal assistant or talk to our 24/7 customer service.",
+    "DateTimeRequested": "Date & Time Requested",
+    "Method": "Method",
+    "TransactionNumber": "Transaction Number",
+    "Status": "Status",
+    "RequestedAmount": "Requested Amount",
+    "CreditedAmount": "Credited Amount",
+    "BonusAmount": "Bonus Amount"
+  },
+
+  "WITHDRAWAL": {
+    "Withdrawal": "WITHDRAWAL",
+    "WeWillProcess": "We will process this request as soon as possible. In the event that this request has taken too long, please fo not hesitate to contact your personal assistant or talk to our 24/7 customer service.",
+    "WithdrawalBalance": "Withdrawal Balance",
+    "LockedAmount": "Locked Amount",
+    "SelectYourBankAccount": "Select your Bank Account",
+    "WithdrawAmount": "Withdraw Amount",
+    "Password": "Password",
+    "Cancel": "Cancel",
+    "Withdraw": "Withdraw",
+    "ErrorWithdrawAmount": "Withdraw Amount is required",
+    "ErrorPassword": "Password is required",
+    "BankAccount": "Bank Account",
+    "Success": "Success",
+    "Message":"Your withdrawal request has been received and is being reviewed."
+  },
+
+  "WITHDRAWALTRANSACTION": {
+    "WithdrawalTransaction": "WITHDRAWAL TRANSACTION",
+    "WeWillProcess": "We will process this request as soon as possible. In the event that this request has taken too long, please fo not hesitate to contact your personal assistant or talk to our 24/7 customer service.",
+    "DateTimeRequested": "Date & Time Requested",
+    "TransactionId": "Transaction Id",
+    "Status": "Status",
+    "Amount": "Amount",
+    "CreateWithdrawal": "Create Withdrawal"
+  },
+
+  "PROFILE": {
+    "Profile": "PROFILE",
+    "ManageProfile": "Manage profile here. You have to complete your profile first before making any withdrawal.",
+    "Username": "Username",
+    "Fullname": "FullName",
+    "BirthDate": "BirthDate",
+    "EmailAddress": "Email Address",
+    "ChooseYourMobileCountryCode": "Choose your Mobile Country Code",
+    "MobileNumber": "Mobile Number",
+    "ChooseYourSecurityQuestion": "Choose your Security Question",
+    "SecurityQuestion": "Security Question",
+    "SecurityQuestionAnswer": "Security Question Answer",
+    "ChooseYourCountry": "Choose your Country",
+    "Country": "Country",
+    "StateProvince": "State Province",
+    "ChooseYourStateProvince": "Choose your State Province",
+    "City": "City",
+    "WechatId": "Wechat Id",
+    "WebChatUserName": "Web Chat User Name",
+    "QQId": "QQ Id",
+    "QQUserName": "QQ User Name",
+    "Submit": "Submit",
+    "ErrorFullName": "FullName is required",
+    "ErrorBirthDate": "BirthDate is required",
+    "ErrorEmail": "Email Address is required",
+    "ErrorMobile": "Mobile is required",
+    "ErrorSecurityQuestionAnswer": "Security Question Answer is required",
+    "ErrorCity": "City is required",
+    "PleaseComplete":"Please complete and verify profile to be able to create withdrawal transactions. Thank you!",
+    "ChangeEmail":"Change",
+    "ChangeMobile":"Change",
+    "YouNeedToHave":"You need to have atleast one active bank account before you can withdraw.",
+    "Create":"Create one now.",
+    "PleaseVerify":"Please verify your email address or mobile number.",
+    "Success":"Success",
+    "Verify":"Verify",
+    "Save_and_Verify":"Save and Verify",
+    "Cancel":"Cancel"
+  },
+
+  "SUCCESS": {
+    "Success": "Success",
+    "SuccessfullyCreated": "You have successfully created an account.",
+    "ModifiedPassword": "You have successfully modified your password.",
+    "PlayNow": "Play Now",
+    "LoginNow": "Login Now"
+  },
+
+  "APP": {
+    "OnlineDeposit": "Online Deposit",
+    "WeChatDeposit": "WeChat Deposit",
+    "Close": "Close",
+    "LoadingGame": "Loading Game..."
+  },
+
+  "PROMOTION": {
+    "CASINO": "Casino",
+    "GAME": "Games",
+    "SPORT": "Sports"
+  },
+
+  "SECURITY":{
+    "17":"When is your spouse's birthday?",
+    "18":"What is your student/job number?",
+    "19":"Who is your favorite idol?",
+    "20":"When is your mother's birthday?",
+    "21":"What is the name of your favorite high school teacher?",
+    "22":"What is your father's name?",
+    "23":"What is the name of your favorite primary school teacher?",
+    "24":"When is your father's birthday?",
+    "25":"What is the name of your spouse?",
+    "26":"Junior high school teacher your name is?",
+    "27":"You are most familiar with the name of a childhood friend?",
+    "28":"You are most familiar with the name of the school dormitory roommate?",
+    "29":"The most influential person in your name?",
+    "30":"What's your favorite color?"
+  },
+
+  "ONLINEBANK":{
+    "32": "Bank of Beijing",
+    "33": "Guangdong Development Bank",
+    "37": "Bank of Communications",
+    "38": "Minsheng Bank",
+    "39": "Ping An Bank",
+    "40": "Pudong Development Bank",
+    "45": "Industrial Bank",
+    "46": "Postal Saving",
+    "47": "China Merchants Bank",
+    "48": "ICBC",
+    "49": "China Everbright Bank",
+    "50": "China Construction Bank",
+    "51": "Agricultural Bank of China",
+    "52": "Bank of China",
+    "53": "CITIC Bank",
+    "54": "Beijing Rural Commercial Bank",
+    "56": "Bank of Shanghai",
+    "59": "Bohai Bank"
+  },
+
+  "DEPOSITMETHOD":{
+    "31": "ATM",
+    "32": "Cash Deposit Machine",
+    "35": "Over the Counter",
+    "38": "ATM",
+    "39": "Cash Deposit Machine",
+    "40": "Over the Counter"
+  },
+
+  "PREFERREDBANK":{
+    "30": "Agricultural Bank of China",
+    "31": "China Construction Bank",
+    "32": "China Minsheng Banking Corporation",
+    "33": "China Merchants Bank",
+    "34": "Industrial and Commercial Bank of China"
+  },
+
+  "MOBILE":{
+    "Header": "Verify / Change Mobile Account",
+    "Info": "This step is necessary to verify your identity. Follow the instruction below.",
+    "Notification": "Verification code has been sent to your Mobile.",
+    "MobileNumber": "Mobile Number",
+    "Code": "Code",
+    "GetCode": "Get Code",
+    "ResendCode": "Resend Code",
+    "Submit": "Submit",
+    "MainHeader": "Verify Account / Change",
+    "MainInfo": "This step is necessary to verify your Identity,please follow the instruction below.",
+    "InvalidCode":"Invalid Code"
+  },
+
+  "EMAIL":{
+    "Header": "Verify / Change Email Account",
+    "Info": "This step is necessary to verify your identity. Follow the instruction below.",
+    "Notification": "Verification code has been sent to your Email.",
+    "EmailAddress": "Email Address",
+    "Code": "Code",
+    "GetCode": "Get Code",
+    "ResendCode": "Resend Code",
+    "Submit": "Submit"
+  },
+
+  "TRANSACTION": {
+    "TYPES": {
+      "All - Type": "0",
+      "Deposit": "1",
+      "Withdrawal": "2",
+      "Credit Memo": "3",
+      "Debit Memo": "4"
+    },
+    "STATUS": {
+      "All - Status": "100",
+      "Requested": "0",
+      "Processing": "5",
+      "Approved": "2",
+      "Rejected": "7",
+      "Waiting for Docs": "9"
+
+    },
+    "AllType": "All - Type",
+    "Deposit": "Deposit",
+    "Withdrawal": "Withdrawal",
+    "CreditMemo": "Credit Memo",
+    "DebitMemo": "Debit Memo",
+
+    "AllStatus": "All - Status",
+    "Requested": "Requested",
+    "Processing": "Processing",
+    "Approved": "Approved",
+    "Rejected": "Rejected",
+    "WaitingForDocs": "Waiting for Docs",
+
+    "TransactionHistory": "Transaction History",
+    "Print": "Print",
+    "RecentTransaction": "Recent Transaction.",
+    "DateFrom": "From:",
+    "DateTo":"To:",
+    "Go":"Go",
+    "Date":"DATE",
+    "Type":"TYPE",
+    "TransactionId":"TRANSACTION ID",
+    "Debit":"DEBIT",
+    "Credit":"CREDIT",
+    "Status":"STATUS",
+    "ErrorDateFrom": "Error Date From",
+    "ErrorDateTo": "Error Date To"
+  },
+
+  "PASSWORD":{
+    "Header": "Change your password",
+    "Info": "Regularly change your password for your accounts protection.",
+    "TypeYourOldPassword": "Type your old password here",
+    "TypeYourNewPassword": "Type your new password here",
+    "RetypePassword": "Re-type your new password here",
+    "ErrorPassword": "Password must be at least 6 characters long and max 30",
+    "ErrorConfirmPassword": "Password must be at least 6 characters long and max 30",
+    "Save": "Save",
+    "Success": "PASSWORD CHANGE SUCCESS!",
+    "SuccessInfo": "Your new password has been set.",
+    "Invalid": "The request is invalid",
+    "DoNotMatch": "The password and confirmation password do not match."
+  }
+}

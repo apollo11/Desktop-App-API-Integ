@@ -1,0 +1,80 @@
+//  LANGUAGE
+
+.c-language {
+    position: relative;
+    padding: 0 10px;
+    text-align: left;
+    @include font-size(12px);
+    color: darken($gray, 30%);
+    span {
+        margin-left: 5px;
+        text-transform: uppercase;
+    }
+}
+
+.c-language__selected {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.c-language__options {
+    list-style: none;
+    position: absolute;
+    top: 140%;
+    left: 0; right: 0;
+    background: $black;
+    margin: auto;
+    margin-top: 10px;
+    padding: 6px;
+    width: 50%;
+    border-radius: 10px;
+
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    opacity: 0;
+    transform: translate(0%, 0%);
+    transition: transform .3s linear, height .3s linear, visibility 0s linear, opacity .3s linear;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid $black;
+        width: 0;
+        height: 0;
+    }
+    > li {
+        display: inline-block;
+        padding: 5px 10px;
+        width: 50%;
+        text-align: left;
+        cursor: pointer;
+        &:hover {
+            color: $gray-med;
+        }
+    }
+    &.is-open {
+        visibility: visible;
+        height: auto;
+        font-size: inherit;
+        opacity: 1;
+        transform: translate(0%, 10%);
+    }
+    .l-roller & {
+        width: 200%;
+        margin-left: -100%;
+        &:before {
+            left: auto;
+            right: 20px;
+        }
+        > li {
+            width: 100%;
+        }
+    }
+}

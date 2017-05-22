@@ -1,0 +1,70 @@
+//  MODALS
+
+.c-modal {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+    margin: 0;
+    background: $black;
+    z-index: 100;
+    .is-main & {
+        background: rgba($black, .8);
+    }
+}
+
+.c-modal__wrapper {
+    position: absolute;
+    top: 50%; left: 50%;
+    max-width: 500px;
+    width: 50%;
+    min-height: 300px;
+    border-radius: $global-radius;
+    transform: translate(-50%, -50%);
+    background: lighten($black, 5%);
+}
+
+.c-modal__body {
+    padding: 2rem 3rem;
+}
+
+.c-modal__title {
+    color: $white;
+    p {
+        @include font-size(12px);
+    }
+}
+
+.c-modal__footer {
+    background: lighten($black, 10%);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom-left-radius: $global-radius;
+    border-bottom-right-radius: $global-radius;
+    .c-form__submit {
+        margin-top: 0;
+    }
+}
+
+.c-modal__close {
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    @include font-size(30px);
+    cursor: pointer;
+    &:focus {
+        outline: 0;
+    }
+    &:hover {
+        color: darken($gray, 5%);
+    }
+}
+
+.c-modal--wide {
+    .c-modal__wrapper {
+        max-width: 700px;
+        width: 75%;
+    }
+}

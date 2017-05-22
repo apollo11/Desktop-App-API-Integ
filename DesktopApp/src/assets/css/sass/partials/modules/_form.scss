@@ -1,0 +1,252 @@
+// FORM
+
+.c-form {
+    a {
+        color: $inputTextColor;
+    }
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+.c-form__group {
+    position: relative; 
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    font-family: $base-font;
+    @include font-size(12px);
+    color: $inputTextColor;
+    transition: all .5s ease-in-out;
+    @extend %clearfix;
+    > .icon {
+        position: absolute;
+        top: 10px; right: 40px;
+        @include font-size(20px);
+    }
+    .alert {
+        padding: 10px 30px;
+        color: $alertColor;
+    }
+    .o-button {
+        height: 100%;
+    }
+}
+
+.c-form__label {
+    display: inline-block;
+    position: relative;
+    color: $inputTextColor;
+    padding: 5px 30px 10px;
+    // text-transform: uppercase;
+    span {
+        margin: 10px 0;
+        padding: 0 50px;
+        // text-transform: uppercase;
+        transition: all .3s ease;
+        z-index: -1;
+    }
+}
+.c-form__label--hack {        
+    position: absolute;
+    left: 0;
+    top: 50%;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+    pointer-events: none;
+    &[hidden] {
+        display: none;
+    }
+}
+
+// INPUT ==================
+.c-form__input {
+    display: block;
+    width: 100%;
+    padding: 15px 40px 15px 30px;
+    border: none;
+    // border: 1px solid lighten($gray-dark, 1.5%);
+    border-radius: $global-input-radius;
+    background: lighten($gray-dark, 1.5%);
+    box-shadow: 0 2px 2px 1px rgba(0,0,0, .1);
+    color: $inputTextColor;
+    transition: all .3s ease;
+    z-index: 10;
+    @include input-placeholder() {
+        text-align: left;
+        text-transform: uppercase;
+        transition: all .3s ease;
+        color: $inputTextColor;
+    };
+    &:focus {
+        outline: 0;
+        @include input-placeholder() {
+            color: darken($inputTextColor, 20%);
+        };
+    }
+    &.error {
+        border-color: red !important;
+    }
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: .5;
+    }
+}
+
+.c-form__input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+    border-radius: $global-input-radius;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0, .1);
+    overflow: hidden;
+    &-add {
+        position: relative;
+        display: table-cell;
+        width: 1%;
+        vertical-align: middle;
+        white-space: nowrap;
+        .c-form__input  {
+            width: 100px;
+            // background: transparent;
+            border-radius: 0;
+        }
+    }
+    input.c-form__input {
+        display: table-cell;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: 10px;
+    }
+    .c-form__input {
+        box-shadow: none;
+    }
+}
+
+
+// CHECKBOX / RADIOS ==================
+.c-form__control {
+    display: inline-block;
+    label {
+        position: relative;
+        display: block;
+        padding: 0;
+        padding-left: 25px;
+        line-height: 1rem;
+        cursor: pointer;
+    }
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        &:checked ~ div {
+            border-color: lighten($gray-dark, 20%);
+            &:after {
+                display: block;
+            }
+        }
+        &:disabled ~ div {
+            pointer-events: none;
+            opacity: .6;
+            &:after {
+                border-color: #7b7b7b;
+            }
+        }
+    }
+}
+.c-form__control-pseudo {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 1rem;
+	height: 1rem;
+	background: lighten($gray-dark, 5%);
+    border: 1px solid lighten($gray-dark, 10%);
+    box-shadow: 0 1px 2px 1px rgba(0,0,0, .2);
+    &:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+    .c-form__control--checkbox & {
+        &:after {
+            top: -4px;
+            left: 8px;
+            width: 5px;
+            height: 14px;
+            transform: rotate(45deg);
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+        }
+    }
+    .c-form__control--radio & {
+        border-radius: 50%;
+        &:after {
+            top: 50%;
+            left: 50%;
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            background: $white;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+// SELECT ==================
+.c-form__select {
+    -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+    -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+    border: 0 !important;  /*REMOVES BORDER*/
+}
+.c-form__select__wrapper {
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%; right: 20px;
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $gray-med;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+}
+
+
+// SUBMIT ==================
+.c-form__submit {
+    margin-top: 20px;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.c-form__divider {
+    text-align: center;
+    span {
+        display: block;
+        text-transform: uppercase;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: $gray-med;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+
+    }
+}

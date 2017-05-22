@@ -1,0 +1,135 @@
+<div id="{{modalId}}" class="c-modal c-modal--wide">
+    <div class="c-modal__wrapper">
+        <button type="button" class="c-modal__close" aria-label="Close" (click)="onCancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="loader align-center" *ngIf="!profile">
+            <div class="spinner"></div>
+            <div>{{ 'Loading...' }}</div>
+        </div>
+
+        <form *ngIf="profile" name="mobileVerification" #mobileVerification="ngForm" class="c-form">
+            <div class="c-modal__body">
+                <div class="c-modal__title align-center">
+                    <h3>{{ 'MOBILE.MainHeader' | translate }}</h3>
+                    <p>{{ 'MOBILE.MainInfo' | translate }}</p>
+                </div>
+
+                <div *ngIf="success && !valid" class="c-alert c-alert--inline hidden" style="display: block">
+                    <div *ngFor="let error of dataError.Errors">
+                        <i class="icon icon-info-circled"></i> {{ error.Description }}
+                    </div>
+                </div>
+
+                <div *ngIf="valid" class="c-alert c-alert--inline">
+                    <i *ngIf="mobile" class="icon icon-info-circled">{{ 'MOBILE.Notification' | translate }}<br/></i>
+                    <i *ngIf="email" class="icon icon-info-circled">{{ 'EMAIL.Notification' | translate }}<br/> </i>
+                    <i *ngIf="!submitted" class="icon icon-info-circled">{{ 'MOBILE.InvalidCode' | translate }}</i>
+                </div>
+
+                <div *ngIf="!emailVerified" class="c-form__group">
+                    <label class="c-form__label invisible">{{ 'EMAIL.Code' | translate }}</label>
+                    <div class="row">
+                        <div class="col col--xs-6">
+                            <input type="email" class="c-form__input" id="emailAddress" required
+                                   [(ngModel)]="profile.Email" name="Email" placeholder="{{ 'EMAIL.EmailAddress' | translate }}"
+                                   #Email="ngModel">
+                        </div>
+                        <div class="col col--xs-3">
+                            <input type="text" class="c-form__input" id="codeEmail"
+                                   [(ngModel)]="profile.EmailResetCode" name="EmailResetCode" placeholder="{{ 'EMAIL.Code' | translate }}"
+                                   #EmailResetCode="ngModel" minlength="6" maxlength="6"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+                        </div>
+                        <div class="col col--xs-3">
+                            <button *ngIf="!email" type="button" (click)="verifyEmail(profile)"
+                                    class="o-button o-button--action o-button--tiny o-button--full">
+                                <span *ngIf="!loadingSPinnerEmail">{{ 'EMAIL.GetCode' | translate }}</span>
+                                <span *ngIf="loadingSPinnerEmail" class="spinner-bar"></span>
+                            </button>
+                            <button *ngIf="email" type="button"
+                                    (click)="verifyEmail(profile)"
+                                    class="o-button o-button--action o-button--tiny o-button--full">
+                                <span *ngIf="!loadingSPinnerEmail" >{{ 'EMAIL.ResendCode' | translate }}</span>
+                                <span *ngIf="loadingSPinnerEmail" class="spinner-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div [hidden]="Email.valid" *ngIf="submittedEmail" class="alert alert-danger">
+                        {{ 'PROFILE.ErrorEmail' | translate }}
+                    </div>
+
+                    <!--<div [hidden]="resetCode.valid" *ngIf="submitted" class="alert alert-danger">-->
+                    <!--Reset Code is required-->
+                    <!--</div>-->
+                </div>
+
+                <div role="separator" class="c-form__group c-form__divider">
+                    <span><i class="icon icon-angle-down"></i></span>
+                </div>
+
+                <div *ngIf="!mobileVerified" class="c-form__group">
+                    <label class="c-form__label invisible" for="countryCode">
+                        <span>{{ 'MOBILE.MobileNumber' | translate }}</span>
+                    </label>
+                    <div class="row">
+                        <div class="col col--xs-6">
+                            <div class="c-form__input-group">
+                                <div class="c-form__input-group-add">
+                                    <div class="c-form__select__wrapper">
+                                        <select class="c-form__input c-form__select" id="countryCode"
+                                                #countryCode="ngModel" name="countryCode"
+                                                [(ngModel)]="profile.MobileCountryCodeNumber">
+                                            <option disabled value="0">{{ 'PROFILE.ChooseYourMobileCountryCode' |
+                                                translate }}
+                                            </option>
+                                            <option *ngFor="let country of countries"
+                                                    [ngValue]="country.CountryCallCode">
+                                                {{ country.CountryCallCode }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input type="text" class="c-form__input" id="mobile-number" required
+                                       [(ngModel)]="profile.MobileNumber" name="mobileNumber"
+                                       placeholder="{{ 'PROFILE.MobileNumber' | translate }}" #mobileNumber="ngModel"
+                                       minlength="10" maxlength="10"
+                                       onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+                            </div>
+                        </div>
+                        <div class="col col--xs-3">
+                            <input type="text" class="c-form__input" id="code"
+                                   [(ngModel)]="profile.MobileResetCode" name="MobileResetCode" placeholder="{{ 'MOBILE.Code' | translate }}"
+                                   #MobileResetCode="ngModel"
+                                   minlength="6" maxlength="6"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+                        </div>
+                        <div class="col col--xs-3">
+                            <button *ngIf="!mobile" type="button" (click)="verifyMobile(profile)"
+                                    class="o-button o-button--action o-button--tiny o-button--full">
+                                <span *ngIf="!loadingSpinnerMobile">{{ 'MOBILE.GetCode' | translate }}</span>
+                                <span *ngIf="loadingSpinnerMobile" class="spinner-bar"></span>
+                            </button>
+                            <button *ngIf="mobile" type="button"
+                                    (click)="verifyMobile(profile)"
+                                    class="o-button o-button--action o-button--tiny o-button--full">
+                                <span *ngIf="!loadingSpinnerMobile" >{{ 'MOBILE.ResendCode' | translate }}</span>
+                                <span *ngIf="loadingSpinnerMobile" class="spinner-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div [hidden]="mobileNumber.valid" *ngIf="submittedMobile" class="alert alert-danger">
+                        {{ 'PROFILE.ErrorMobile' | translate }}
+                    </div>
+                </div>
+            </div>
+            <div class="c-modal__footer">
+                <button [disabled]="!mobile" [disabled]="!email" id="goBack" type="submit" (click)="verifyCode(profile)" class="c-form__submit o-button"
+                        [class.o-button--action]="mobile || email" [disabled]="mobileVerification.invalid">
+                    <span *ngIf="!loadingSpinnerSubmit">{{ 'MOBILE.Submit' | translate }}</span>
+                    <span *ngIf="loadingSpinnerSubmit" class="spinner-bar"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

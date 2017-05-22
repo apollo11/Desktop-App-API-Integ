@@ -1,0 +1,76 @@
+<p>
+  quick-deposit-bank-account works!
+</p>
+<section *ngIf="errorMessage">
+        <pre>
+             {{ errorMessage }}
+        </pre>
+</section>
+<div class="container">
+  <h1>Quick Deposit Bank Account Form ({{mode}}) </h1>
+  <form name="QuickDepositBankAccount" autocomplete="off" novalidate #QuickDepositBankAccountForm="ngForm">
+
+    <section *ngIf="quickDepositMethods && quickDepositPreferredBanks">
+      <div class="form-group">
+        <label for="Quick Deposit Method">Quick Deposit Method</label>
+        <select name="quickDepositMethod" [(ngModel)]="quickDepositMethods.Id">
+          <option value="" disabled>Choose your Quick Deposit Method</option>
+          <option *ngFor="let quickDepositMethod of quickDepositMethods" [ngValue]="quickDepositMethod.Id">
+            {{ quickDepositMethod.PaymentMethodName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="Quick Deposit Preferred Banks">Quick Deposit Preferred Banks</label>
+        <select name="quickDepositPreferredBanks" [(ngModel)]="quickDepositPreferredBanks.Id">
+          <option value="" disabled>Choose your Bank</option>
+          <option *ngFor="let quickDepositPreferredBank of quickDepositPreferredBanks"
+                  [ngValue]="quickDepositPreferredBank.Id">
+            {{ quickDepositPreferredBank.BankName }}
+          </option>
+        </select>
+      </div>
+
+    </section>
+
+    <section *ngIf="bankAccounts">
+    <div class="form-group">
+      <label for="Bank Name">Bank Name</label>
+      <input type="text" class="form-control" id="bankName"
+             name="bankName" disabled
+             placeholder="Bank Name"
+             [(ngModel)]="bankAccounts.BankAccountName">
+    </div>
+
+    <div class="form-group">
+      <label for="Account Name">Account Name</label>
+      <input type="text" class="form-control" id="accountName"
+             name="accountName" disabled
+             placeholder="Account Name"
+             [(ngModel)]="bankAccounts.AccountName">
+    </div>
+
+    <div class="form-group">
+      <label for="Account Number">Account Number</label>
+      <input type="text" class="form-control" id="accountNumber"
+             name="accountNumber" disabled
+             placeholder="Account Number"
+             [(ngModel)]="bankAccounts.AccountNo">
+    </div>
+
+    <div class="form-group">
+      <label for="Bonus Code">Bonus Code</label>
+      <input type="text" class="form-control" id="bonusCode"
+             [(ngModel)]="bankAccounts.BonusCode" name="bonusCode"
+             placeholder="Bonus Code" #bonusCode="ngModel">
+    </div>
+
+    </section>
+    <button type="submit" (click)="getBankAccount(quickDepositMethods.Id,quickDepositPreferredBanks.Id)" class="btn btn-success"
+            [disabled]="!QuickDepositBankAccountForm.form.valid">
+      Submit
+    </button>
+
+  </form>
+</div>

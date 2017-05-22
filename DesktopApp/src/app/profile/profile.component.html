@@ -1,0 +1,235 @@
+<div class="loader align-center" *ngIf="!profile">
+    <div class="spinner"></div>
+    <div>{{ 'Loading...' }}</div>
+</div>
+
+<div class="grid c-article" *ngIf="profile">
+
+    <div class="c-article__header">
+        <div *ngIf="success">
+            <div class="c-alert__wrapper align-center">
+                <h4 class="c-alert__title">
+                    <i class="icon icon-info-circled"></i>{{ 'PROFILE.Success' | translate }}
+                </h4>
+                <p>{{ 'PROFILE.PleaseVerify' | translate }}</p>
+            </div>
+        </div>
+        <h2 class="c-article__title">{{ 'PROFILE.Profile' | translate }}</h2>
+        <p class="c-article__desc">{{ 'PROFILE.ManageProfile' | translate }}</p>
+    </div>
+
+    <div *ngIf="!accountAtivated" class="c-alert c-alert--inline">
+        <i class="icon icon-info-circled"></i> {{ 'PROFILE.PleaseComplete' | translate }}
+        <!--<a [routerLink]="['/email-verification']" class="o-button o-button--action o-button--tiny"> <span *ngIf="!profile.IsMobileVerified">Verify Email </span> <span *ngIf="profile.IsMobileVerified">{{ 'PROFILE.ChangeEmail' | translate }}</span>      </a>
+        <a [routerLink]="['/mobile-verification']" class="o-button o-button--action o-button--tiny"> <span *ngIf="!profile.IsMobileVerified">Verify Mobile </span> <span *ngIf="profile.IsMobileVerified">{{ 'PROFILE.Change Mobile' | translate }}</span></a>-->
+    </div>
+    <div *ngIf="!profile.PlayerBankAccounts" class="c-alert c-alert--inline">
+        <i class="icon icon-info-circled"></i>{{ 'PROFILE.YouNeedToHave' | translate }}
+        <a class="o-button o-button--action o-button--tiny" [routerLink]="['/bank-add']">{{ 'PROFILE.Create' | translate
+            }}</a>
+    </div>
+    <div>
+        <form name="profile" autocomplete="off" novalidate #ProfileForm="ngForm" class="c-form">
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="fullname">{{ 'PROFILE.Fullname' | translate }}</label>
+                <input type="text" class="c-form__input" id="fullname" required name="fullname"
+                       [(ngModel)]="profile.FullName" [value]="profile.FullName"
+                       placeholder="* {{ 'PROFILE.Fullname' | translate }}" #fullname="ngModel">
+                <div [hidden]="fullname.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorFullName' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="birthdate">{{ 'PROFILE.BirthDate' | translate }}</label>
+                <my-date-picker name="birthdate" [options]="myDatePickerOptions" [(ngModel)]="profile.BirthDate"
+                                required class="c-form__input"
+                                placeholder="{{ 'PROFILE.BirthDate' | translate }}" #birthdate="ngModel"
+                                (dateChanged)="onDateChanged($event)" [selDate]="dateGet">
+
+                </my-date-picker>
+
+                <div [hidden]="birthdate.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorBirthDate' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible">{{ 'PROFILE.EmailAddress' | translate }}</label>
+                <div class="row">
+                    <div class="col col--xs-10">
+                        <input type="email" class="c-form__input" id="emailAddress" required [(ngModel)]="profile.Email"
+                               name="emailAddress" placeholder="{{ 'PROFILE.EmailAddress' | translate }}"
+                               #emailAddress="ngModel" [value]="profile.Email">
+                    </div>
+                    <div class="col col--xs">
+                        <button (click)="openModalVerifyEmail()"
+                                class="o-button o-button--action o-button--tiny o-button--full">
+                            <span *ngIf="!emailVerified">{{ 'PROFILE.Verify' | translate }}</span>
+                            <span *ngIf="emailVerified">{{ 'PROFILE.ChangeEmail' | translate }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div [hidden]="emailAddress.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorEmail' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="countryCode">
+                    <span>{{ 'Mobile Number' | translate }}</span>
+                </label>
+                <div class="row">
+                    <div class="col col--xs-10">
+                        <div class="c-form__input-group">
+                            <div class="c-form__input-group-add">
+                                <div class="c-form__select__wrapper">
+                                    <div [hidden]="countryCode.dirty" class="c-form__label c-form__label--hack">
+                                        +86
+                                    </div>
+                                    <select class="c-form__input c-form__select" id="countryCode"
+                                            #countryCode="ngModel" name="countryCode"
+                                            [(ngModel)]="profile.CountryCode">
+                                        <option disabled value="0">{{ 'PROFILE.ChooseYourMobileCountryCode' | translate
+                                            }}
+                                        </option>
+                                        <option *ngFor="let country of countries" [ngValue]="country.CountryCallCode">
+                                            {{ country.CountryCallCode }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="text" class="c-form__input" id="mobile-number" required
+                                   [(ngModel)]="profile.MobileNumber" name="mobileNumber"
+                                   placeholder="{{ 'PROFILE.MobileNumber' | translate }}" #mobileNumber="ngModel"
+                                   minlength="10" maxlength="10" [value]="profile.MobileNumber"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+
+                        </div>
+                    </div>
+                    <div class="col col--xs-2">
+                        <button (click)="openModalVerifyMobile()"
+                                class="o-button o-button--action o-button--tiny o-button--full">
+                            <span *ngIf="!mobileVerified">{{ 'PROFILE.Verify' | translate }}</span>
+                            <span *ngIf="mobileVerified">{{ 'PROFILE.ChangeMobile' | translate }}</span>
+                        </button>
+                    </div>
+                </div>
+                <div [hidden]="mobileNumber.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorMobile' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="securityQuestion">{{ 'PROFILE.SecurityQuestion' | translate
+                    }}</label>
+                <div class="c-form__select__wrapper">
+                    <div [hidden]="securityQuestion.dirty || securityQuestion.valid"
+                         class="c-form__label c-form__label--hack">
+                        {{ 'PROFILE.SecurityQuestion' | translate }}
+                    </div>
+                    <select class="c-form__input c-form__select" id="securityQuestion"
+                            #securityQuestion="ngModel" name="securityQuestion"
+                            [(ngModel)]="profile.SecurityQuestionId1">
+                        <option disabled value="0">{{ 'PROFILE.ChooseYourSecurityQuestion' | translate }}</option>
+                        <option *ngFor="let securityQuestion of securityQuestionInfo"
+                                [ngValue]="securityQuestion.Id">
+                            <!--{{ securityQuestion.SecurityQuestionDesc }}-->
+                            {{'SECURITY.'+securityQuestion.Id | translate }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible">{{ 'PROFILE.SecurityQuestionAnswer' | translate }}</label>
+                <input type="password" class="c-form__input" id="securityQuestionAnswer" required
+                       [(ngModel)]="profile.SecurityQuestionAnswer1"
+                       name="securityQuestionAnswer" placeholder="{{ 'PROFILE.SecurityQuestionAnswer' | translate }}"
+                       #securityQuestionAnswer="ngModel">
+                <div [hidden]="securityQuestionAnswer.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorSecurityQuestionAnswer' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="country">{{ 'PROFILE.Country' | translate }}</label>
+                <div class="c-form__select__wrapper">
+                    <div [hidden]="country.dirty || country.valid" class="c-form__label c-form__label--hack">
+                        {{ 'PROFILE.Country' | translate }}
+                    </div>
+                    <select class="c-form__input c-form__select" id="country" #country="ngModel" name="country"
+                            [(ngModel)]="profile.Country">
+                        <option disabled value="0">{{ 'PROFILE.ChooseYourCountry' | translate }}</option>
+                        <option *ngFor="let country of countries"
+                                [ngValue]="country.CountryCode">
+                            {{ country.CountryName }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="stateProvince">{{ 'PROFILE.StateProvince' | translate
+                    }}</label>
+                <div class="c-form__select__wrapper">
+                    <div [hidden]="stateProvince.dirty || stateProvince.valid"
+                         class="c-form__label c-form__label--hack">
+                        {{ 'PROFILE.StateProvince' | translate }}
+                    </div>
+                    <select class="c-form__input c-form__select" name="stateProvince" id="stateProvince"
+                            #stateProvince="ngModel" [(ngModel)]="profile.StateProvinceId">
+                        <option disabled value="0">{{ 'PROFILE.ChooseYourStateProvince' | translate }}</option>
+                        <option *ngFor="let stateProvince of stateProvinces" [ngValue]="stateProvince.Id">
+                            {{ stateProvince.StateProvinceName }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible" for="city">{{ 'PROFILE.City' | translate }}</label>
+                <input type="text" class="c-form__input" id="city" required [(ngModel)]="profile.City" name="city"
+                       placeholder="{{ 'PROFILE.City' | translate }}"
+                       #city="ngModel">
+                <div [hidden]="city.valid" *ngIf="submitted" class="alert alert-danger">
+                    {{ 'PROFILE.ErrorCity' | translate }}
+                </div>
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible">{{ 'PROFILE.WebChatUserName' | translate }}</label>
+                <input type="text" class="c-form__input" id="webChatUserName" [(ngModel)]="profile.WebChatUserName"
+                       name="webChatUserName"
+                       placeholder="{{ 'PROFILE.WechatId' | translate }}" #webChatUserName="ngModel">
+            </div>
+
+            <div class="c-form__group">
+                <label class="c-form__label invisible">{{ 'PROFILE.QQUserName' | translate }}</label>
+                <input type="text" class="c-form__input" id="qqUserName" [(ngModel)]="profile.QQUserName"
+                       name="qqUserName" placeholder="{{ 'PROFILE.QQId' | translate }}"
+                       #qqUserName="ngModel">
+            </div>
+
+            <div class="c-form__group">
+                <button (click)="onCancel()"
+                        class="c-form__submit o-button">
+                    <span>{{ 'PROFILE.Cancel' | translate }}</span>
+                </button>
+
+                <button *ngIf="accountAtivated" type="submit" (click)="updateProfile(profile)"
+                        class="c-form__submit o-button o-button--action">
+                    <span *ngIf="!submitting">{{ 'PROFILE.Submit' | translate }}</span>
+                    <span *ngIf="submitting" class="spinner-bar"></span>
+                </button>
+                <button *ngIf="!accountAtivated" type="submit" (click)="updateProfile(profile)"
+                        class="c-form__submit o-button o-button--action">
+                    <span *ngIf="!submitting">{{ 'PROFILE.Save_and_Verify' | translate }}</span>
+                    <span *ngIf="submitting" class="spinner-bar"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
