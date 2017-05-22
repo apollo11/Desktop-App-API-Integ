@@ -1,0 +1,67 @@
+
+<div class="l-page__container g-grid" *ngIf="authService.tokenId">
+
+    <header app-header class="l-header"></header>
+    
+    <div class="l-roller">
+        <div class="c-newstream">
+            <div class="c-newstream__wrapper">
+                <span>1 You spin me right round, baby. Like a record, baby.</span>
+                <span>2 You spin me right round, baby. Like a record, baby.</span>
+                <span>3 You spin me right round, baby. Like a record, baby.</span>
+            </div>
+        </div>
+
+        <div class="o-divider o-divider--vertrical"></div>
+
+        <!--<div language-selector></div>-->
+
+    </div>
+
+    <div class="l-sidebar">
+
+        <div class="l-sidebar__nav">
+            <app-menu></app-menu>
+        </div>
+
+    </div>
+
+	<div class="l-main">
+		<div class="l-main__container">
+            
+            <router-outlet></router-outlet>
+
+            <!--<router-outlet name="aux"></router-outlet>-->
+
+		</div>
+	</div>
+
+    <footer app-footer class="l-footer"></footer>
+
+</div>
+
+<div class="c-dialog" *ngIf="idleNow">
+    <p><strong>{{idleState}}</strong></p>
+    <p *ngIf="lastPing"><small>Last active <strong>{{lastPing | amTimeAgo}}</strong></small></p>
+    <!--<button (click)="reset()" *ngIf="timedOut" class="o-buttton o-button--action o-button--tiny">Restart</button>-->
+</div>
+
+<div class="fullscreen-window">
+    <div class="fullscreen-bar">
+        <div class="fullscreen-utils">
+            <button class="o-button o-button--tiny"><strong>{{userDetails.username}}</strong></button>
+            <button (click)="addOnlineDeposit()" class="o-button o-button--action o-button--tiny">{{"APP.OnlineDeposit" | translate}}</button>
+            <button (click)="addWechatDeposit()" class="o-button o-button--action o-button--tiny">{{"APP.WeChatDeposit" | translate}}</button>
+        </div>
+        <div class="fullscreen-close" (click)="closeFullscreenWindow()"><i class="icon icon-cancel"></i>{{"APP.Close" | translate}}</div>
+    </div>
+    <div class="loader align-center"> 
+        <div class="spinner"></div>
+        <div>{{"APP.LoadingGame" | translate}}</div>
+    </div>
+    <div class="fullscreen-container"></div>    
+</div>
+
+<router-outlet *ngIf="!authService.tokenId"></router-outlet>
+
+<modal-placeholder></modal-placeholder>

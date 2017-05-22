@@ -1,0 +1,314 @@
+{
+  "HOME": {
+    "TITLE": "你好角与NGX-翻译！",
+    "SELECT": "更改语言"
+  },
+
+  "LOGIN": {
+    "Username": "用户名",
+    "Password": "密码",
+    "RememberUsername": "您的用户名？",
+    "ForgotPassword": "忘记密码？",
+    "Submit": "提交",
+    "ErrorUsername": "全名为必填项。",
+    "ErrorPassword": "密码为必填项。",
+    "NewUser": "新用户？",
+    "SignUp": "注册！"
+  },
+
+  "SIGNUP": {
+    "Header": "注册",
+    "Info": "快捷方便.立即创建一个新帐户。",
+    "Username": "用户名",
+    "Password": "密码",
+    "Email": "邮箱地址",
+    "Or": "或",
+    "Submit": "提交",
+    "ErrorUsername": "用户名必须至少为5个字符，最多30个",
+    "ErrorPassword": "密码必须至少为6个字符，最多30个",
+    "ErrorEmail": "电子邮件地址是必需的",
+    "ErrorMobile": "手机是必需的",
+    "SignIn": "已经有帐户？ 请登录",
+    "CountryCode": "选择您的国家代码",
+    "MobileNumber": "手机号码"
+  },
+
+  "FORGOTPASSWORD": {
+    "Header": "需要帮助您记起密码吗？",
+    "Info": "请提供一个注册时填写的联系信息，依据指示回到您的游戏。",
+    "Username": "用户名",
+    "Email": "邮箱地址",
+    "Or": "或",
+    "CountryCode": "选择您的国家代码",
+    "MobileNumber": "手机号码",
+    "ErrorUsername": "用户名是必填项",
+    "ErrorEmail": "电子邮件地址是必需的",
+    "ErrorMobile": "手机是必需的",
+    "Submit": "提交"
+  },
+
+  "LANDINGPAGE": {
+    "FeaturedSlotGames": "特色老虎机",
+    "LiveCasino": "娱乐场",
+    "SportsBook": "体育书",
+    "StayInTheGame": "留在游戏中，直到最后一秒！",
+    "BetNow": "赌注 现在",
+    "Header1": "¥10,000！我们最好的第一笔存款奖金优惠 然 ！",
+    "DepositNow": "存款 现在",
+    "PlayNow": "立即游戏",
+    "More": "更多",
+    "MoreGames": "更多游戏"
+  },
+
+  "BANNER": {
+    "PlayNow": "立即游戏"
+  },
+
+  "HEADER": {
+    "Home": "首页",
+    "Logout": "登出",
+    "More": "更多"
+  },
+
+  "FOOTER": {
+    "AboutOrange88": "关于Orange88",
+    "Privacy": "隐私",
+    "Terms": "条款",
+    "Help": "帮帮我",
+    "Copyright": "版权 2016公司。版权所有。"
+  },
+
+  "MENU": {
+    "HOME": "首页",
+    "CASINO": "娱乐场",
+    "GAMES": "电子游戏",
+    "FeaturedGames": "特色游戏",
+    "Jackpot": "累积彩池",
+    "Slots": "老虎机",
+    "TableGames": "桌面游戏",
+    "VideoPoker": "视频扑克",
+    "SportsBook": "体育书",
+    "Promotions": "优惠",
+    "Affiliate": "合营计划",
+    "BankAccounts": "银行帐号",
+    "BankAccountsList": "银行帐号列表",
+    "AddBankAccounts": "添加银行账号",
+    "Deposit": "存款",
+    "OnlineDeposit": "在线存款",
+    "QuickDeposit": "快速存款",
+    "WeChatDeposit": "微信存款",
+    "DepositHistory": "存款历史",
+    "Withdrawal": "提款",
+    "CreateWithdrawal": "创建提款",
+    "WithdrawalHistory": "提款历史",
+    "Settings": "设置",
+    "EditProfile": "编辑个人资料",
+    "SecuritySettings": "安全设定"
+  },
+
+  "CASINO": {
+    "Casino": "娱乐场",
+    "PlayNow": "立即游戏"
+  },
+
+  "PROMOTIONS": {
+    "Promotions": "优惠",
+    "MoreInformation": "更多信息",
+    "Header1": "¥10,000！我们最好的第一笔存款奖金优惠！",
+    "DepositNow": "存款 现在",
+    "Search": "搜"
+  },
+
+  "SPORTSBOOK": {
+    "Sports": "竞技",
+    "BetNow": "赌注 现在"
+  },
+
+  "FILTERATION": {
+    "All": "所有",
+    "GD": "GD 游戏",
+    "TGP": "TGP 游戏",
+    "HG": "HG 游戏",
+    "PT": "PT 游戏",
+    "AG": "AG 游戏",
+    "BETSOFT": "BETSOFT 游戏",
+    "MG": "MG 游戏",
+    "TTG": "TTG 游戏",
+    "TITLE": "标题",
+    "Search": "搜索",
+    "Games": "游戏",
+    "PlayNow": "立即游戏"
+  },
+
+  "BANKACCOUNTS": {
+    "BankAccounts": "银行帐号",
+    "AddAsMyWithdrawal": "您可以任意添加提款帐号，但这需要受批准。",
+    "AccountName": "账户名称",
+    "AccountNo": "银行帐号",
+    "BankName": "银行名称",
+    "Status": "状态",
+    "Edit": "编辑",
+    "AddBankAccount": "添加银行账",
+    "AddNewBankAccountDetails": "添加新的银行帐户详细信息。",
+    "AccountNumber": "银行帐号",
+    "PreferredBanks": "首选银行",
+    "ChooseYourBank": "选择您的银行",
+    "BranchName": "银行名称",
+    "City": "城市",
+    "Province": "省份",
+    "Cancel": "取消",
+    "Add": "添加",
+    "Success": "成功",
+    "ErrorAccountNumber": "帐号是必需的",
+    "ErrorPreferredBanks": "首选银行是必需的",
+    "ErrorBranchName": "银行分行是必填项",
+    "ErrorCity": "城市是必需的",
+    "ErrorProvince": "省是必需的"
+  },
+
+  "ONLINEDEPOSIT": {
+    "OnlineDeposit": "在线存款",
+    "OnlineDepositBank": "在线存款银行",
+    "OnlineDepositIsAnOnline": "在线银行提供网上即时存款交易的方式，不必担心银行资料会泄露，既安全又方便。",
+    "MinimumAndMaximumDeposit": "最低存款和最高存款：10元 - 5万元 每笔交易",
+    "ChooseYourOnlineDepositBank": "选择您的在线存款银行",
+    "Bonus": "免费奖金代码",
+    "Deposit": "存款",
+    "ConfirmDepositAmount": "确认存款金额",
+    "DepositAmount": "存款金额",
+    "Proceed": "继续",
+    "Cancel": "取消",
+    "ErrorOnlineDepositBank": "网上存款银行是必需的",
+    "ErrorOnlineDepositAmount": "存款金额是必需的"
+  },
+
+  "QUICKDEPOSIT": {
+    "QuickDeposit": "快速存款",
+    "QuickDepositMethod": "快速存款方式",
+    "QuickDepositPreferredBanks": "快速存款首选银行",
+    "Step1": "步骤一",
+    "ChooseYourQuickDepositMethod": "选择您的快速存款方式",
+    "ChooseYourBank": "选择您的银行",
+    "Step2": "步骤二",
+    "PlayerDepositAmount": "玩家存款金额",
+    "BankName": "银行名称",
+    "AccountName": "账户名称",
+    "AccountNumber": "银行帐号",
+    "BonusCode": "免费奖金代码",
+    "Step3": "步骤三",
+    "UniqueDepositAmount": "独特存款金额",
+    "Please Deposit this Amount": "请存入此金额。",
+    "Deposit": "存款",
+    "Success": "成功",
+    "MinimumAndMaximumDeposit": "最低存款和最高存款：10元 - 2万元 每笔交易",
+    "Successfully":"成功存款"
+  },
+
+  "WECHATDEPOSIT": {
+    "WechatDeposit": "微信存款" ,
+    "MinimumAndMaximumDeposit": "最低存款和最高存款：10元 - 3000元 每笔交易",
+    "DepositAmount": "存款金额" ,
+    "BonusCode": "免费奖金代码" ,
+    "Deposit": "存款" ,
+    "ConfirmDepositAmount": "确认存款金额" ,
+    "Proceed": "继续",
+    "Cancel": "取消",
+    "BankIsNotAvailable": "银行不可用",
+    "ErrorDepositAmount": "最低10元，最高3000元"
+  },
+
+  "DEPOSITTRANSACTION": {
+    "DepositTransaction": "存款交易",
+    "WeWillProcess": "我们会在最短时间内处理您的申请，万一有些延误，请不要犹豫联系您的私人助理或全天候的客服部。",
+    "DateTimeRequested": "申请日期和时间",
+    "Method": "方式",
+    "TransactionNumber": "交易号",
+    "Status": "状态",
+    "RequestedAmount": "申请金额",
+    "CreditedAmount": "入账金额",
+    "BonusAmount": "红利金额"
+  },
+
+  "WITHDRAWAL": {
+    "Withdrawal": "提款",
+    "WeWillProcess": "我们会在最短时间内处理您的申请，万一有些延误，请不要犹豫联系您的私人助理或全天候的客服部。",
+    "WithdrawalBalance": "提款余额",
+    "LockedAmount": "锁定金额",
+    "SelectYourBankAccount": "选择您的银行帐号",
+    "WithdrawAmount": "入提款金额",
+    "Password": "密码",
+    "Cancel": "取消",
+    "Withdraw": "提款",
+    "ErrorWithdrawAmount": "撤消量是必需的",
+    "ErrorPassword": "密码是必需的",
+    "BankAccount": "银行帐户",
+    "Success": "成功",
+    "Message":"您的提款请求已收到并正在审核中。"
+  },
+
+  "WITHDRAWALTRANSACTION": {
+    "WithdrawalTransaction": "撤消交易",
+    "WeWillProcess": "我们会在最短时间内处理您的申请，万一有些延误，请不要犹豫联系您的私人助理或全天候的客服部。",
+    "DateTimeRequested": "申请日期和时间",
+    "TransactionId": "交易号",
+    "Status": "状态",
+    "Amount": "金额",
+    "CreateWithdrawal": "创建撤回"
+  },
+
+  "PROFILE": {
+    "Profile": "个人资料",
+    "ManageProfile": "在此处管理个人资料。 您必须先补充完整您的个人信息，然后才能提款。",
+    "Username": "用户名",
+    "Fullname": "全名",
+    "BirthDate": "出生日期",
+    "EmailAddress": "邮箱地址",
+    "ChooseYourMobileCountryCode": "选择您的移动国家代码",
+    "MobileNumber": "手机号码",
+    "ChooseYourSecurityQuestion": "选择您的安全问题",
+    "SecurityQuestion": "安全性问题",
+    "SecurityQuestionAnswer": "安全问题",
+    "ChooseYourCountry": "选择国家",
+    "Country": "国家",
+    "StateProvince": "州省",
+    "ChooseYourStateProvince": "选择您的省市",
+    "City": "城市",
+    "WechatId": "微信号",
+    "WebChatUserName": "网络聊天用户名",
+    "QQId": "QQ号",
+    "QQUserName": "QQ用户名",
+    "Submit": "提交",
+    "ErrorFullName": "全名是必填项",
+    "ErrorBirthDate": "生日必需",
+    "ErrorEmail": "电子邮件地址是必需的",
+    "ErrorMobile": "手机是必需的",
+    "ErrorSecurityQuestionAnswer": "安全问题答案是必需的",
+    "ErrorCity": "城市是必需的",
+    "PleaseComplete":"请完成并验证配置文件以创建提款交易。谢谢！",
+    "ChangeEmail":"更改电子邮件",
+    "ChangeMobile":"改变手机",
+    "YouNeedToHave":"您必须拥有至少一个活跃的银行帐户才能退出。",
+    "Create":"现在创建一个"
+  },
+
+  "SUCCESS": {
+    "Success": "成功",
+    "SuccessfullyCreated": "您已经成功创建了一个帐户。",
+    "ModifiedPassword": "您已成功修改密码。",
+    "PlayNow": "立即游戏",
+    "LoginNow": "现在登录"
+  },
+
+  "APP": {
+    "OnlineDeposit": "在线存款",
+    "WeChatDeposit": "微信存款",
+    "Close": "关",
+    "LoadingGame": "加载游戏..."
+  },
+
+  "PROMOTION": {
+    "CASINO": "娱乐场",
+    "GAME": "电子游戏",
+    "SPORT": "体育博彩"
+  }
+}

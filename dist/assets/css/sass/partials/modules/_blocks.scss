@@ -1,0 +1,151 @@
+//  BLOCKS
+
+.c-block {
+    position: relative;
+    min-height: 90px;
+    padding: 20px;
+    // height: 100%;
+    overflow: hidden;
+    box-shadow: 0 2px 3px 1px rgba(0,0,0, .2);
+    border-radius: $global-radius;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+    .o-button {
+        width: auto;
+        white-space: nowrap;
+    }
+}
+
+.c-block__content {
+    padding: 0 2em;
+    .c-block--banner & {
+        width: 70%;
+        position: absolute;
+        top: 50%; right: 0;
+        margin: auto;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+    * {
+        text-transform: uppercase;
+    }
+    h1 {
+        @include font-size(25px);
+    }
+    h3 {
+        @include font-size(20px);
+    }
+    h1, h3 {
+        margin: 0 0 10px;
+        font-family: $highlight-font-bold;
+        text-shadow: 1px 2px 3px rgba(0,0,0, .6);
+    }
+}
+
+
+.c-block--banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.c-block--promotion {
+    position: relative;
+    // padding-right: 40%;
+    padding: 0;
+    min-height: 170px;
+    border-radius: 0;
+    box-shadow: none;
+    display: table;
+    width: 100%;
+    .c-block__body,
+    .c-block__image {
+        display: table-cell;
+    }
+    .c-block__body {
+        position: relative;
+        padding: 10px;
+        background: #726468;
+        // width: 60%;
+    }
+    .c-block__title {
+        height: 42px;
+        margin: 5px 0;
+        @include font-size(18px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .c-block__text {
+        @include font-size(12px);
+    }
+    .c-block__image {
+        position: relative;
+        background: linear-gradient(to right, rgba($black, .8) 0%, rgba($black, .8) 50%, transparent 50%, transparent 100%);
+        width: 45%;
+        padding: 10px;
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            right: 0;
+            padding: 20px;
+        }
+    }
+    .c-block__link {
+        display: block;
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+        background: $orange;
+        color: $white;
+        z-index: 1;
+        transition: all .3s ease;
+        &:hover {
+            border-color: transparent;
+            background: darken($orange, 5%);
+        }
+    }
+}
+
+.c-block--game {
+    background-color: #111;
+    height: 150px;
+    .o-button {
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: auto;
+        // width: 80%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    &:hover {
+        box-shadow: inset 0 0 30px 20px rgba(0,0,0, .8);
+        .o-button {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.c-block--casino {  }
+
+.c-block--sports { 
+    height: 200px;
+    .c-block__title {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+ }
+
+.c-block--mini {
+    height: 150px;
+    padding: 10px;
+}

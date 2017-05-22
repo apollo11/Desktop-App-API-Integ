@@ -1,0 +1,91 @@
+// ==========================
+// VARIABLES
+// ==========================
+
+
+// ==== TYPOGRAPHY
+$base-font-size:    16px!default;
+$base-line-height:  24px!default;
+
+$heading-alpha:     36px;
+$heading-beta:      30px;
+$heading-charlie:   24px;
+$heading-delta:     18px;
+$heading-epsilon:   16px;    
+
+
+// ==== FONTS
+$base-font:          'Lasiver Regular', Helvetica, Arial, sans-serif;
+$base-font-medium:   'Lasiver Medium', Helvetica, Arial, sans-serif;
+$base-font-bold:     'Lasiver Bold', Helvetica, Arial, sans-serif;
+$base-font-light:    'Lasiver Light', Helvetica, Arial, sans-serif;
+
+$icon-font:          'orange88-font';
+$highlight-font-bold: 'brandon_grotesqueblack', 'Lasiver Bold', Arial, sans-serif;
+
+
+// ==== COLORS
+$white:                 #f5f5f5;
+$gray-light:            #d2d2d2; //#e0e0e0;
+$gray-light-1:          #c0c0c0;
+$gray:                  #a0a0a0;
+$gray-med:              #808080; 
+$gray-dark-2:           #404040;
+$gray-dark-1:           #191d1f;
+$gray-dark:             #1b1f20; //#2b2b2b;
+$black-1:               #1f2324; //#222;
+$black:                 #111; //#222;
+
+// CUSTOM
+$orange:                #ff6600;
+$green:                 #089e00;
+$red:                   #cd5c5c;
+
+
+// BRAND COLORS
+$backgroundColor:       $gray-dark;
+$baseColor:		        $white;
+$highlightColor:        $orange;
+
+// LINK COLORS
+$linkColor:             $black;
+$linkColorHover:        $gray-dark;
+
+// BUTTON COLORS
+$buttonColorDefault:    $gray;
+$buttonColorAction:     $orange;
+$buttonColorSuccess:    $green;
+$buttonColorDisabled:   $gray-light;
+
+// ICON COLORS
+$iconColorDefault:      $gray-med;
+$iconColorHover:        $gray-dark;
+
+// <hr> COLOR
+$hrColor:			    $gray-light;
+
+// Text selection background color
+$selectionColor:	    $gray-light;
+
+// FORM COLOR
+$inputBackgroundColor:  $gray;
+$inputTextColor:        $gray-med;
+$placeholderColor:      $gray-med;
+$errorColor:            $red;
+$alertColor:            $red;
+$validColor:            $green;
+
+
+// ==== LAYOUT
+$max-width: 		        900px; // base=16px, 1442px
+
+// ==== STYLE DEFAULTS
+$global-radius: 10px;
+$global-btn-radius: 50px;
+$global-input-radius: 50px;
+
+$global-rounded: 1000px;
+
+$regulatTextSize: 18px;
+$buttonTextSize: 30px;
+$formTextSize: 24px;

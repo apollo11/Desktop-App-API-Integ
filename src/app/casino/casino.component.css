@@ -1,0 +1,11 @@
+/*.p-casino {}*/
+
+.p-casino__list {
+    padding: 0;
+    overflow: hidden;
+}
+.p-casino__list > li {
+        float: left;
+        width: 33.333%
+}
+

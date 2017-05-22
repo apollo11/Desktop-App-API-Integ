@@ -1,0 +1,49 @@
+<div class="loader align-center" *ngIf="!profiles"> 
+  <div class="spinner"></div>
+  <div>{{ 'Loading...' }}</div>
+</div>
+
+<div class="grid c-article" *ngIf="profiles">
+    <div class="row">
+        <div class="col col--xs-12">
+
+            <div class="c-article__header">
+              <h2 class="c-article__title">{{ 'BANKACCOUNTS.BankAccounts' | translate }}</h2>
+              <p class="c-article__desc">{{ 'BANKACCOUNTS.AddAsMyWithdrawal' | translate }}</p>
+            </div>
+
+            <table class="c-table">
+                <thead>
+                    <tr>
+                        <th>{{ 'BANKACCOUNTS.AccountName' | translate }}</th>
+                        <th>{{ 'BANKACCOUNTS.AccountNo' | translate }}</th>
+                        <th>{{ 'BANKACCOUNTS.BankName' | translate }}</th>
+                        <th>{{ 'BANKACCOUNTS.Status' | translate }}</th>
+                        <th>{{ 'BANKACCOUNTS.Edit' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody id="list-withdrawal-transaction">
+                    <tr *ngFor="let profile of profiles.PlayerBankAccounts">
+                        <td>{{ profile.BankAccountName }}</td>
+                        <td>{{ profile.AccountNumber }}</td>
+                        <td>{{ profile.BranchName }}</td>
+                        <td>{{ profile.IsActiveAccount === true ? 'Active' : 'Inactive'}}</td>
+                        <td>
+                            <div class="c-table__action" routerLink="/bank/{{profile.Id}}">
+                                <i class="icon icon-pencil"></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr/>
+            <button routerLink="/bank-add" class="o-button o-button--action">
+                {{ 'BANKACCOUNTS.AddBankAccount' | translate }}
+            </button>
+
+        </div>
+    </div>
+</div>
+
+

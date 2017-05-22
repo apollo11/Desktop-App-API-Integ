@@ -1,7 +1,0 @@
-
-<select name="securityQuestion" ngModel>
-    <option value="" disabled>Choose your Security Question</option>
-    <option *ngFor="let securityQuestion of securityQuestions" [ngValue]="securityQuestion.Id">
-        {{ securityQuestion.SecurityQuestionDesc }}
-    </option>
-</select>

@@ -1,0 +1,102 @@
+<div class="loader align-center" *ngIf="!bankDetails">
+    <div class="spinner"></div>
+    <div>{{ 'Loading...' }}</div>
+</div>
+
+<div class="c-alert hidden" style="display: none">
+    <div class="c-alert__wrapper align-center">
+        <h4 class="c-alert__title">
+        <i class="icon icon-info-circled"></i> Success
+        </h4>
+        <p class="c-alert__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi nam nemo, quisquam praesentium adipisci, quia ratione sunt! Placeat earum eius impedit nulla recusandae maxime deleniti. Possimus ab rem doloremque praesentium!</p>
+        {{ errorMessage | json}} {{successMessage | json}}
+    </div>
+</div>
+
+<div id="bankDetailPage" class="grid c-article" *ngIf="bankDetails">
+    <div class="row">
+        <div class="col col--xs-12" id="scrollable" autoheight>
+
+            <div class="c-article__header">
+              <h2 class="c-article__title">Edit Bank Account</h2>
+              <p class="c-article__desc">Modify existing bank account details.</p>
+            </div>
+
+            <form name="bankDetails" autocomplete="off" novalidate #BankDetailForm="ngForm" class="c-form">
+
+                <div class="c-form__group">
+                  <label for="status" class="c-form__label invisible">Status</label>
+                  <div class="c-form__select__wrapper">
+                    <select class="c-form__input c-form__select" id="status" name="status" [(ngModel)]="bankDetails.IsActiveAccount">
+                      <option value="" disabled>Choose your Bank Status</option>
+                      <option value="true">Active</option>
+                      <option value="false">Inactive</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="c-form__group">
+                  <label for="accountName" class="c-form__label invisible">AccountName</label>
+                  <input type="text" class="c-form__input" id="accountName"
+                        required disabled
+                        name="username" [(ngModel)]="bankDetails.AccountName" [value]=" bankDetails.AccountName "
+                        placeholder="* Account Name" #accountName="ngModel">
+                </div>
+
+                <div class="c-form__group">
+                  <label for="AccountNumber" class="c-form__label invisible">Account Number</label>
+                  <input type="text" class="c-form__input" id="AccountNumber"
+                        required
+                        name="AccountNumber" [(ngModel)]="bankDetails.AccountNumber" [value]=" bankDetails.AccountNumber "
+                        placeholder="* Account Number" #AccountNumber="ngModel">
+                </div>
+
+                <div class="c-form__group">
+                  <label for="preferredBanks" class="c-form__label invisible">Preferred Banks</label>
+
+                  <div class="c-form__select__wrapper">
+                    <select  class="c-form__input c-form__select" id="preferredBanks" name="preferredBanks" [(ngModel)]="bankDetails.BankId">
+                      <option value="" disabled>Choose your Bank</option>
+                      <option *ngFor="let quickDepositPreferredBank of quickDepositPreferredBanks"
+                              [ngValue]="quickDepositPreferredBank.Id">
+                        {{ quickDepositPreferredBank.BankName }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="c-form__group">
+                  <label for="branchName" class="c-form__label invisible">BranchName</label>
+                  <input type="text" class="c-form__input" id="branchName"
+                        required
+                        name="branchName" [(ngModel)]="bankDetails.BranchName" [value]=" bankDetails.BranchName "
+                        placeholder="* Branch Name" #branchName="ngModel">
+                </div>
+
+                <div class="c-form__group">
+                  <label for="city" class="c-form__label invisible">City</label>
+                  <input type="text" class="c-form__input" id="city"
+                        required
+                        name="city" [(ngModel)]="bankDetails.City" [value]=" bankDetails.City "
+                        placeholder="* City" #city="ngModel">
+                </div>
+
+                <div class="c-form__group">
+                  <label for="province" class="c-form__label invisible">Province</label>
+                  <input type="text" class="c-form__input" id="province"
+                        required
+                        name="province" [(ngModel)]="bankDetails.Province" [value]=" bankDetails.Province "
+                        placeholder="* Province" #province="ngModel">
+                </div>
+
+                <div class="c-form__group">
+                  <button class="o-button" (click)="goBack()">Back</button>
+                  <button type="submit" (click)="bankUpdate(bankDetails)" class="o-button o-button--action"
+                          [disabled]="!BankDetailForm.form.valid">Save</button>
+                </div>
+                
+            </form>
+
+        </div>
+    </div>
+</div>

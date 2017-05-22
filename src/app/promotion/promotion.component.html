@@ -1,0 +1,69 @@
+<div class="loader align-center" *ngIf="!promotions">
+    <div class="spinner"></div>
+    <div>{{ 'Loading...' }}</div>
+</div>
+
+<div class="g-grid g-gap g-rowrepeat-3s">
+
+    <div class="g-row g-row-one-third">
+        <div class="grid">
+            <div class="row">
+                <div class="col col--xs-6">
+                    <div class="c-panel c-panel--carousel">
+                        <app-banner></app-banner>
+                    </div>
+                </div>
+                <div class="col col--xs-6">
+                    <div class="c-block c-block--banner" style="background-image: url('assets/images/main-deposit-banner.jpg')">
+                        <div class="c-block__content">
+                            <h1>{{ 'PROMOTIONS.Header1' | translate }}</h1>
+                            <a [routerLink]="['/online-deposit']" class="o-button o-button--action o-button--med">{{ 'PROMOTIONS.DepositNow' | translate }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="g-row g-row-two-third">
+        <div class="c-panel" *ngIf="promotions">
+            <div class="c-panel__header">
+                <div class="c-panel__title"><span>{{ 'PROMOTIONS.Promotions' | translate }}</span></div>
+                <div class="c-panel__utils">
+                    <div class="o-search">
+                        <div class="o-search__wrapper">
+                            <i class="icon icon-search float-right"></i>
+                            <input type="text" [(ngModel)]="filter.title" placeholder="{{ 'PROMOTIONS.Search' | translate }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-panel__body" autoheight>
+                <div id="scrollable" class="c-panel__body__wrapper" autoheight>
+                    <ul class="c-panel__list c-list row">
+                        <li *ngFor="let promotion of promotions  | gameFilter: filter" class="col col--xs-4">
+
+                            <div class="c-block c-block--promotion">
+                                <div class="c-block__body">
+                                    <div class="c-block__title">
+                                        {{promotion.title}}
+                                    </div>
+                                    <div class="c-block__text">
+                                        {{promotion.subtitle}}
+                                    </div>
+                                    <a routerLink="/details/{{promotion.category}}/{{promotion.id}}"
+                                       class="c-block__link">{{ 'PROMOTIONS.MoreInformation' | translate }}</a>
+                                </div>
+                                <div class="c-block__image">
+                                    <img src="{{ promotion.thumb_image.src }}" alt="{{ promotion.title }}"/>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

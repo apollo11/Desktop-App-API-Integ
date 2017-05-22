@@ -1,0 +1,23 @@
+<section *ngIf="errorMessage">
+        <pre>
+             {{ errorMessage }}
+        </pre>
+</section>
+
+<div class="container">
+    <h1>Quick Deposit Method Form ({{mode}}) </h1>
+    <form name="QuickDepositMethod" autocomplete="off" novalidate #QuickDepositMethodForm="ngForm">
+        <section *ngIf="quickDepositMethods">
+            <div class="form-group">
+                <label for="Quick Deposit Method">Quick Deposit Method</label>
+                <select name="quickDepositMethod">
+                    <option value="" disabled>Choose your Quick Deposit Method</option>
+                    <option *ngFor="let quickDepositMethod of quickDepositMethods" [ngValue]="quickDepositMethod.Id">
+                        {{ quickDepositMethod.PaymentMethodName }}
+                    </option>
+                </select>
+            </div>
+
+        </section>
+    </form>
+</div>

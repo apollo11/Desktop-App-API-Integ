@@ -1,0 +1,6 @@
+<select name="state" ngModel>
+    <option value="" disabled>Choose your State Province</option>
+    <option *ngFor="let stateProvince of stateProvinces" [ngValue]="stateProvince.Id">
+        {{ stateProvince.StateProvinceName }}
+    </option>
+</select>

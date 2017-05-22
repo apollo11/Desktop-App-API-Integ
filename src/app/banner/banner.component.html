@@ -1,0 +1,18 @@
+
+<div *ngIf="banner" class="c-carousel c-carousel--single grid grid--container grid--no-gutters js-carousel">
+    <div class="row row--no-gutters">
+    <!--<slick-slider>-->
+    <div *ngFor="let game of banner | slice:0:3" class="c-carousel__item col col--sm-12 col--no-gutters">
+        <div class="c-block c-block--banner" [ngStyle]="{'background-image': 'url(' + game.thumb_image.src + ')'}">   
+            <div class="c-block__content">
+                <h1>{{ game.title }}</h1>                        
+                <a (click)="loadiframe(game.game_platform_code, game.game_code)" class="o-button o-button--action">
+                     {{ 'CASINO.PlayNow' | translate }}
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    <!--</slick-slider>-->
+    </div>
+</div>

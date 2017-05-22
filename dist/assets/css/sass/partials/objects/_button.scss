@@ -1,0 +1,59 @@
+//  Buttons
+.o-button {
+    display: inline-block;    
+    padding: 1em 2em;
+    font-family: $base-font;
+    @include font-size(16px);
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: $global-btn-radius;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0, .1);
+    background: $buttonColorDefault;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+    transition: all .3s ease;
+    + .o-button {
+        margin-left: 1rem;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
+
+a.o-button {
+    color: $white;
+}
+
+
+.o-button--action {
+    background: $buttonColorAction;
+    &:hover {
+        background: darken($buttonColorAction, 6%);
+    }
+}
+.o-button--success {
+    background: $buttonColorSuccess;
+    &:hover {
+        background: darken($buttonColorSuccess, 6%);
+    }
+}
+.o-button--disabled {
+    background: $buttonColorDisabled;
+}
+
+.o-button--full {
+    width: 100%;
+}
+
+.o-button--med {
+    @include font-size(14px);
+}
+.o-button--small {
+    @include font-size(12px);
+}
+.o-button--tiny {
+    @include font-size(10px);
+}

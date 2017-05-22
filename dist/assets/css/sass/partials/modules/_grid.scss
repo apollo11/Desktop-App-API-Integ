@@ -1,0 +1,67 @@
+//  CSS GRID
+.g-grid {
+    display: grid;
+    height: 100%;
+}
+
+.g-item {
+    height: 100%;
+}
+
+.g-gap {
+    grid-gap: 20px;
+}
+
+// COLUMNS
+.g-colrepeat-1s {
+    grid-template-columns: repeat(1, 1fr);
+}
+.g-colrepeat-2s {    
+    grid-template-columns: repeat(2, 1fr);
+}
+.g-colrepeat-3s {
+    grid-template-columns: repeat(3, 1fr);
+}
+.g-colrepeat-4s {
+    grid-template-columns: repeat(4, 1fr);
+}
+.g-colrepeat-5s {
+    grid-template-columns: repeat(5, 1fr);
+}
+.g-colrepeat-6s {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+//  ROWS
+.g-rowrepeat-1s {
+    grid-template-rows: repeat(1, 1fr);
+}
+.g-rowrepeat-2s {    
+    grid-template-rows: repeat(2, 1fr);
+}
+.g-rowrepeat-3s {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+.g-row-first-half {
+    grid-row: 1 / 2;
+}
+.g-row-second-half {
+    grid-row: 3 / 4;
+}
+
+.g-row-one-third {
+    grid-row: 1 / 2;
+}
+.g-row-two-third {
+    grid-row: 2 / 4;
+}
+
+// FLEXBOX GRID
+.grid,
+.row {
+    .c-panel & {
+        height: 100%;
+    }
+}

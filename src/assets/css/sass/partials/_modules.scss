@@ -1,0 +1,214 @@
+/* MODULES */
+
+@import 'modules/grid';
+
+@import "modules/article";
+
+@import 'modules/icons';
+
+@import 'modules/form';
+@import 'modules/list';
+@import 'modules/blocks';
+@import 'modules/table';
+
+@import 'modules/utils';
+@import 'modules/alert';
+
+@import 'modules/lang';
+@import 'modules/newsstream';
+
+@import 'modules/modal';
+@import 'modules/carousel';
+
+//  LOGIN
+@import 'modules/login';
+
+
+//  PANELS
+.c-panel {
+    position: relative;
+    border-radius: $global-radius;
+    box-shadow: 0 2px 3px 1px rgba(0,0,0, .2);
+    overflow: hidden;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+        "panel-header"
+        "panel-body";
+    > div {
+        height: 100%;
+    }
+}
+
+.c-panel__header {
+    grid-name: panel-header;
+    background: rgba($black, .8);
+    padding: 10px 25px;
+    display: table;
+    width: 100%;
+    height: 100%;
+    > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.c-panel__title {
+    text-transform: uppercase;
+    font-family: $highlight-font-bold;
+    overflow: hidden;
+}
+
+.c-panel__body {
+    grid-name: panel-body;
+    padding: 20px;
+    background: url('../images/inner-blocks-bg.png') no-repeat;
+    background-size: cover;
+    height: 100% !important;
+}
+.c-panel__body__wrapper {
+    // padding-right: 40px;
+    height: 100%;
+}
+
+.c-panel__list {
+    padding: 0;
+}
+.c-panel__utils {
+    text-align: right;
+}
+
+.c-panel--mini {
+    grid-template-rows: 30px 1fr;
+    background: rgba(0,0,0,.5);
+    .c-panel__header,
+    .c-panel__body {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background: transparent;
+    }
+    .c-panel__title {
+        @include font-size(20px);
+    }
+    .c-panel__utils {
+        float: right;
+        line-height: 20px;
+    }
+}
+
+.c-panel--carousel {
+    // display: block;
+    // height: 100%;
+    .c-panel__header {
+        height: auto;
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+
+.c-panel--grid {
+    display: grid;
+}
+.c-panel--block {
+    display: block;
+}
+
+
+// PROMO
+
+.promo-detail .c-panel__body__wrapper {
+    position: relative;       
+}
+.promo-detail [class^="col-md-"] {
+    float: left;
+}
+.promo-detail .col-md-8 {
+    width: 70%;
+    padding-right: 20px;
+}
+
+.promo-detail .col-md-4 {
+    width: 30%;
+}
+
+.promo__title {
+    padding: 20px;
+    margin-bottom: 2rem;
+    background: rgba(0,0,0, .6);
+    h3 {        
+        text-transform: uppercase;
+        margin: 0;
+    }
+    span {
+        @include font-size(14px);
+        color: $gray-med;
+    }
+}
+
+.promo__body {
+    overflow: hidden;
+    .panel-heading,
+    .panel-body {
+        padding: 10px 20px;
+    }
+    .panel-heading {
+        background: rgba(0,0,0, .8);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .panel-body {
+        @include font-size(14px);
+        color: $gray-med;
+        background: rgba(0,0,0, .6);
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        tbody {
+            tr {
+                border-bottom: 1px solid $gray-dark;
+            }
+            td {
+                padding: 10px;
+            }
+        }
+        thead {
+            th {
+                text-align: left;
+                color: $white;
+                padding: 10px;
+            }
+        }
+    }
+    .col-md-4 {
+        tbody {      
+            td {
+                display: block;     
+                padding: 0;
+                b {
+                    text-transform: uppercase;
+                    color: $white;
+                }
+                &:first-child() {
+                    padding-top: 10px;
+                }
+                &:nth-child(2) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+    .well {
+        background: rgba(0,0,0, .5);
+        margin: 10px 0;
+        padding: 20px;
+        h4 {
+            text-transform: uppercase;
+            color: $white;
+        }
+    }
+}

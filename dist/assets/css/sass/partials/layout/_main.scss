@@ -1,0 +1,34 @@
+//  MAIN
+
+.l-main {
+    grid-area: main;
+    height: 100%;
+    padding: 30px;
+    // overflow: hidden;
+
+    overflow-y: auto;
+    @include mq(tablet-wide, max) {
+        padding: 10px;
+        // overflow-x: auto;
+    }
+}
+
+.l-main__container {
+    position: relative;
+    height: 100%;
+}
+
+// SECTIONS
+#homeFeaturedBanners { 
+    grid-row: 1 / 3; 
+    > .row {
+        height: 50%;
+    }
+}
+#homeFeaturedGames { 
+    grid-row: 3 / 4; 
+    height: 230px;
+    // .c-panel {
+    //     height: 250px;
+    // }
+}

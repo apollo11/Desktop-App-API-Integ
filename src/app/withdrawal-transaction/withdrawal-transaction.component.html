@@ -1,0 +1,40 @@
+<div class="loader align-center" *ngIf="!withdrawalTransactions"> 
+  <div class="spinner"></div>
+  <div>{{ 'Loading...' }}</div>
+</div>
+
+<div id="withdrawalTransactionPage" class="grid c-article" *ngIf="withdrawalTransactions">
+    <div class="row">
+        <div class="col col--xs-12">
+
+            <div class="c-article__header">
+              <h2 class="c-article__title">{{ 'WITHDRAWALTRANSACTION.WithdrawalTransaction' | translate }}</h2>
+              <p class="c-article__desc">{{ 'WITHDRAWALTRANSACTION.WeWillProcess' | translate }}</p>
+            </div>
+
+            <table class="c-table">
+                <thead>
+                    <tr>
+                        <th>{{ 'WITHDRAWALTRANSACTION.DateTimeRequested' | translate }}</th>
+                        <th>{{ 'WITHDRAWALTRANSACTION.TransactionId' | translate }}</th>
+                        <th>{{ 'WITHDRAWALTRANSACTION.Status' | translate }}</th>
+                        <th>{{ 'WITHDRAWALTRANSACTION.Amount' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody id="list-withdrawal-transaction">
+                    <tr *ngFor="let withdrawalTransaction of withdrawalTransactions">
+                        <td>{{ withdrawalTransaction.WithdrawalDate + '+0800' | date: 'MM/dd/yyyy hh:mm:ss a' }}</td>
+                        <td>{{ withdrawalTransaction.TransactionNo }}</td>
+                        <td>{{ withdrawalTransaction.Status }}</td>
+                        <td>{{ withdrawalTransaction.WithdrawalAmount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr/>
+            <button routerLink="/withdrawal" class="o-button o-button--action">{{ 'WITHDRAWALTRANSACTION.CreateWithdrawal' | translate }}</button>
+    
+        </div>
+    </div>
+</div>
+
