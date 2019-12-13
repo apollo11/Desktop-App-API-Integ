@@ -59,7 +59,7 @@
     "mydatepicker": "^1.9.9",
     "ng2-signalr": "^2.0.3",
     "ngx-malihu-scrollbar": "^1.1.1",
-    "npm": "^4.4.4",
+    "npm": "^6.13.4",
     "rxjs": "^5.0.1",
     "signalr": "^2.2.1",
     "ts-helpers": "^1.1.1",
